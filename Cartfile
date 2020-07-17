@@ -1,0 +1,19 @@
+#ReactorKit
+github "ReactorKit/ReactorKit" == 2.1
+
+#Reactive
+github "ReactiveX/RxSwift" == 5.1
+github "RxSwiftCommunity/RxOptional" == 4.1
+
+#DI
+github "Swinject/Swinject" == 2.7
+github "Swinject/SwinjectAutoregistration" == 2.7
+
+#DataSource
+github "ra1028/DiffableDataSources" == 0.4
+
+#Network
+github "Moya/Moya" == 14.0
+
+#Image
+github "SDWebImage/SDWebImage" == 5.8.4

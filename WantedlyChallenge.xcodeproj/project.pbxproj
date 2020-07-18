@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		8DAC5B4F24C1BA3B007A8B67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5B4E24C1BA3B007A8B67 /* AppDelegate.swift */; };
 		8DAC5B5124C1BA3B007A8B67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5B5024C1BA3B007A8B67 /* SceneDelegate.swift */; };
-		8DAC5B5324C1BA3B007A8B67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5B5224C1BA3B007A8B67 /* ViewController.swift */; };
-		8DAC5B5624C1BA3B007A8B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5B5424C1BA3B007A8B67 /* Main.storyboard */; };
 		8DAC5B5824C1BA3C007A8B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5B5724C1BA3C007A8B67 /* Assets.xcassets */; };
 		8DAC5B5B24C1BA3C007A8B67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5B5924C1BA3C007A8B67 /* LaunchScreen.storyboard */; };
 		8DAC5B6624C1BA3C007A8B67 /* WantedlyChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5B6524C1BA3C007A8B67 /* WantedlyChallengeTests.swift */; };
@@ -31,6 +29,10 @@
 		8DAC5BFA24C27DAC007A8B67 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BD324C27B5A007A8B67 /* Alamofire.framework */; };
 		8DAC5BFC24C27DAC007A8B67 /* DifferenceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BCD24C27B5A007A8B67 /* DifferenceKit.framework */; };
 		8DAC5C0124C28801007A8B67 /* WeakMapTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5C0024C28801007A8B67 /* WeakMapTable.framework */; };
+		8DAC5C0824C2A130007A8B67 /* RecrutingCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5C0724C2A130007A8B67 /* RecrutingCellView.xib */; };
+		8DAC5C0A24C2A140007A8B67 /* RecrutingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C0924C2A140007A8B67 /* RecrutingCellView.swift */; };
+		8DAC5C0D24C2A167007A8B67 /* RecrutingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5C0C24C2A167007A8B67 /* RecrutingCollectionViewCell.xib */; };
+		8DAC5C0F24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C0E24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +56,6 @@
 		8DAC5B4B24C1BA3B007A8B67 /* WantedlyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WantedlyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DAC5B4E24C1BA3B007A8B67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DAC5B5024C1BA3B007A8B67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8DAC5B5224C1BA3B007A8B67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8DAC5B5524C1BA3B007A8B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DAC5B5724C1BA3C007A8B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DAC5B5A24C1BA3C007A8B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DAC5B5C24C1BA3C007A8B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +84,10 @@
 		8DAC5BD624C27B5A007A8B67 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		8DAC5BD724C27B5A007A8B67 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
 		8DAC5C0024C28801007A8B67 /* WeakMapTable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WeakMapTable.framework; path = Carthage/Build/iOS/WeakMapTable.framework; sourceTree = "<group>"; };
+		8DAC5C0724C2A130007A8B67 /* RecrutingCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecrutingCellView.xib; sourceTree = "<group>"; };
+		8DAC5C0924C2A140007A8B67 /* RecrutingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecrutingCellView.swift; sourceTree = "<group>"; };
+		8DAC5C0C24C2A167007A8B67 /* RecrutingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecrutingCollectionViewCell.xib; sourceTree = "<group>"; };
+		8DAC5C0E24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecrutingCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +164,6 @@
 				8DAC5BBE24C27308007A8B67 /* UI */,
 				8DAC5B4E24C1BA3B007A8B67 /* AppDelegate.swift */,
 				8DAC5B5024C1BA3B007A8B67 /* SceneDelegate.swift */,
-				8DAC5B5224C1BA3B007A8B67 /* ViewController.swift */,
-				8DAC5B5424C1BA3B007A8B67 /* Main.storyboard */,
 				8DAC5B5724C1BA3C007A8B67 /* Assets.xcassets */,
 				8DAC5B5924C1BA3C007A8B67 /* LaunchScreen.storyboard */,
 				8DAC5B5C24C1BA3C007A8B67 /* Info.plist */,
@@ -199,6 +201,8 @@
 		8DAC5BBF24C2730D007A8B67 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C0524C2972D007A8B67 /* CollectionViewCell */,
+				8DAC5C0424C29721007A8B67 /* View */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -260,6 +264,40 @@
 				8DAC5BCC24C27B5A007A8B67 /* SwinjectAutoregistration.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8DAC5C0424C29721007A8B67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC5C0624C29F91007A8B67 /* RecrutingCellView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8DAC5C0524C2972D007A8B67 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC5C0B24C2A14D007A8B67 /* RecrutingCell */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		8DAC5C0624C29F91007A8B67 /* RecrutingCellView */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC5C0724C2A130007A8B67 /* RecrutingCellView.xib */,
+				8DAC5C0924C2A140007A8B67 /* RecrutingCellView.swift */,
+			);
+			path = RecrutingCellView;
+			sourceTree = "<group>";
+		};
+		8DAC5C0B24C2A14D007A8B67 /* RecrutingCell */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC5C0C24C2A167007A8B67 /* RecrutingCollectionViewCell.xib */,
+				8DAC5C0E24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift */,
+			);
+			path = RecrutingCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,8 +406,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DAC5B5B24C1BA3C007A8B67 /* LaunchScreen.storyboard in Resources */,
+				8DAC5C0824C2A130007A8B67 /* RecrutingCellView.xib in Resources */,
+				8DAC5C0D24C2A167007A8B67 /* RecrutingCollectionViewCell.xib in Resources */,
 				8DAC5B5824C1BA3C007A8B67 /* Assets.xcassets in Resources */,
-				8DAC5B5624C1BA3B007A8B67 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,8 +456,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DAC5B5324C1BA3B007A8B67 /* ViewController.swift in Sources */,
 				8DAC5B4F24C1BA3B007A8B67 /* AppDelegate.swift in Sources */,
+				8DAC5C0A24C2A140007A8B67 /* RecrutingCellView.swift in Sources */,
+				8DAC5C0F24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift in Sources */,
 				8DAC5B5124C1BA3B007A8B67 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,14 +495,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8DAC5B5424C1BA3B007A8B67 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8DAC5B5524C1BA3B007A8B67 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8DAC5B5924C1BA3C007A8B67 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

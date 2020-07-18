@@ -6,4 +6,26 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
-import Foundation
+import ReactorKit
+import RxSwift
+
+final class RecrutingCatalogViewReactor: Reactor {
+
+    enum Action {
+
+    }
+
+    enum Mutation {
+
+    }
+
+    struct State {
+
+    }
+
+    var initialState: State
+
+    init() {
+        initialState = State()
+    }
+}

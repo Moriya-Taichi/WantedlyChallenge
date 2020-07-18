@@ -33,6 +33,7 @@
 		8DAC5C0A24C2A140007A8B67 /* RecrutingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C0924C2A140007A8B67 /* RecrutingCellView.swift */; };
 		8DAC5C0D24C2A167007A8B67 /* RecrutingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5C0C24C2A167007A8B67 /* RecrutingCollectionViewCell.xib */; };
 		8DAC5C0F24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C0E24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift */; };
+		8DAC5C1224C2B529007A8B67 /* loadXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1124C2B529007A8B67 /* loadXib.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		8DAC5C0924C2A140007A8B67 /* RecrutingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecrutingCellView.swift; sourceTree = "<group>"; };
 		8DAC5C0C24C2A167007A8B67 /* RecrutingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecrutingCollectionViewCell.xib; sourceTree = "<group>"; };
 		8DAC5C0E24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecrutingCollectionViewCell.swift; sourceTree = "<group>"; };
+		8DAC5C1124C2B529007A8B67 /* loadXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadXib.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		8DAC5B4D24C1BA3B007A8B67 /* WantedlyChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C1024C2A519007A8B67 /* Extension */,
 				8DAC5BC424C2733B007A8B67 /* Routing */,
 				8DAC5BC324C2732F007A8B67 /* Repository */,
 				8DAC5BC224C27327007A8B67 /* Service */,
@@ -210,6 +213,8 @@
 		8DAC5BC024C27316007A8B67 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C1424C2B696007A8B67 /* Recruting */,
+				8DAC5C1324C2B673007A8B67 /* RecrutingCatalog */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -298,6 +303,28 @@
 				8DAC5C0E24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift */,
 			);
 			path = RecrutingCell;
+			sourceTree = "<group>";
+		};
+		8DAC5C1024C2A519007A8B67 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC5C1124C2B529007A8B67 /* loadXib.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8DAC5C1324C2B673007A8B67 /* RecrutingCatalog */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RecrutingCatalog;
+			sourceTree = "<group>";
+		};
+		8DAC5C1424C2B696007A8B67 /* Recruting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Recruting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +487,7 @@
 				8DAC5C0A24C2A140007A8B67 /* RecrutingCellView.swift in Sources */,
 				8DAC5C0F24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift in Sources */,
 				8DAC5B5124C1BA3B007A8B67 /* SceneDelegate.swift in Sources */,
+				8DAC5C1224C2B529007A8B67 /* loadXib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

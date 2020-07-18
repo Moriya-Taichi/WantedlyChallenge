@@ -1,0 +1,29 @@
+#  CarthageOutput.xcfilelist
+#  WantedlyChallenge
+#
+#  Created by Mori on 2020/07/18.
+#  Copyright © 2020 Mori. All rights reserved.
+
+#DI
+$(SRCROOT)/Carthage/Build/iOS/Swinject.framework
+$(SRCROOT)/Carthage/Build/iOS/SwinjectAutoregistration.framework
+
+#ReactorKit
+$(SRCROOT)/Carthage/Build/iOS/ReactorKit.framework
+$(SRCROOT)/Carthage/Build/iOS/ReactorKitRuntime.framework
+
+#ReactiveExtension
+$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework
+$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework
+$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework
+$(SRCROOT)/Carthage/Build/iOS/RxOptional.framework
+
+#Network
+$(SRCROOT)/Carthage/Build/iOS/Moya.framework
+
+#DataSource
+$(SRCROOT)/Carthage/Build/iOS/DiffableDataSources.framework
+
+#image
+$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework
+$(SRCROOT)/Carthage/Build/iOS/SDWebImageMapKit.framework

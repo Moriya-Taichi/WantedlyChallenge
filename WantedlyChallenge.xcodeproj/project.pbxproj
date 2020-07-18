@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,22 @@
 		8DAC5B5B24C1BA3C007A8B67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5B5924C1BA3C007A8B67 /* LaunchScreen.storyboard */; };
 		8DAC5B6624C1BA3C007A8B67 /* WantedlyChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5B6524C1BA3C007A8B67 /* WantedlyChallengeTests.swift */; };
 		8DAC5B7124C1BA3C007A8B67 /* WantedlyChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5B7024C1BA3C007A8B67 /* WantedlyChallengeUITests.swift */; };
+		8DAC5BD824C27B5A007A8B67 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BC824C27B59007A8B67 /* RxRelay.framework */; };
+		8DAC5BDA24C27B5A007A8B67 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BC924C27B5A007A8B67 /* RxSwift.framework */; };
+		8DAC5BDE24C27B5B007A8B67 /* DiffableDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BCB24C27B5A007A8B67 /* DiffableDataSources.framework */; };
+		8DAC5BE024C27B5B007A8B67 /* SwinjectAutoregistration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BCC24C27B5A007A8B67 /* SwinjectAutoregistration.framework */; };
+		8DAC5BE424C27B5B007A8B67 /* ReactorKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BCE24C27B5A007A8B67 /* ReactorKitRuntime.framework */; };
+		8DAC5BE624C27B5B007A8B67 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BCF24C27B5A007A8B67 /* RxCocoa.framework */; };
+		8DAC5BE824C27B5C007A8B67 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BD024C27B5A007A8B67 /* RxOptional.framework */; };
+		8DAC5BEA24C27B5C007A8B67 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BD124C27B5A007A8B67 /* Swinject.framework */; };
+		8DAC5BEC24C27B5C007A8B67 /* SDWebImageMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BD224C27B5A007A8B67 /* SDWebImageMapKit.framework */; };
+		8DAC5BF024C27B5D007A8B67 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BD424C27B5A007A8B67 /* SDWebImage.framework */; };
+		8DAC5BF224C27B5E007A8B67 /* ReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BD524C27B5A007A8B67 /* ReactorKit.framework */; };
+		8DAC5BF424C27B5E007A8B67 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BD624C27B5A007A8B67 /* Moya.framework */; };
+		8DAC5BF624C27B5F007A8B67 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BD724C27B5A007A8B67 /* RxMoya.framework */; };
+		8DAC5BFA24C27DAC007A8B67 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BD324C27B5A007A8B67 /* Alamofire.framework */; };
+		8DAC5BFC24C27DAC007A8B67 /* DifferenceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5BCD24C27B5A007A8B67 /* DifferenceKit.framework */; };
+		8DAC5C0124C28801007A8B67 /* WeakMapTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAC5C0024C28801007A8B67 /* WeakMapTable.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +65,25 @@
 		8DAC5B6C24C1BA3C007A8B67 /* WantedlyChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WantedlyChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DAC5B7024C1BA3C007A8B67 /* WantedlyChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantedlyChallengeUITests.swift; sourceTree = "<group>"; };
 		8DAC5B7224C1BA3C007A8B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DAC5BC524C275D4007A8B67 /* CarthageOutput.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = CarthageOutput.xcfilelist; sourceTree = "<group>"; };
+		8DAC5BC624C275E5007A8B67 /* CarthageInput.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = CarthageInput.xcfilelist; sourceTree = "<group>"; };
+		8DAC5BC824C27B59007A8B67 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		8DAC5BC924C27B5A007A8B67 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		8DAC5BCA24C27B5A007A8B67 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		8DAC5BCB24C27B5A007A8B67 /* DiffableDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiffableDataSources.framework; path = Carthage/Build/iOS/DiffableDataSources.framework; sourceTree = "<group>"; };
+		8DAC5BCC24C27B5A007A8B67 /* SwinjectAutoregistration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwinjectAutoregistration.framework; path = Carthage/Build/iOS/SwinjectAutoregistration.framework; sourceTree = "<group>"; };
+		8DAC5BCD24C27B5A007A8B67 /* DifferenceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DifferenceKit.framework; path = Carthage/Build/iOS/DifferenceKit.framework; sourceTree = "<group>"; };
+		8DAC5BCE24C27B5A007A8B67 /* ReactorKitRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactorKitRuntime.framework; path = Carthage/Build/iOS/ReactorKitRuntime.framework; sourceTree = "<group>"; };
+		8DAC5BCF24C27B5A007A8B67 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		8DAC5BD024C27B5A007A8B67 /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
+		8DAC5BD124C27B5A007A8B67 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
+		8DAC5BD224C27B5A007A8B67 /* SDWebImageMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImageMapKit.framework; path = Carthage/Build/iOS/SDWebImageMapKit.framework; sourceTree = "<group>"; };
+		8DAC5BD324C27B5A007A8B67 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		8DAC5BD424C27B5A007A8B67 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		8DAC5BD524C27B5A007A8B67 /* ReactorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactorKit.framework; path = Carthage/Build/iOS/ReactorKit.framework; sourceTree = "<group>"; };
+		8DAC5BD624C27B5A007A8B67 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		8DAC5BD724C27B5A007A8B67 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
+		8DAC5C0024C28801007A8B67 /* WeakMapTable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WeakMapTable.framework; path = Carthage/Build/iOS/WeakMapTable.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +91,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DAC5C0124C28801007A8B67 /* WeakMapTable.framework in Frameworks */,
+				8DAC5BEC24C27B5C007A8B67 /* SDWebImageMapKit.framework in Frameworks */,
+				8DAC5BF424C27B5E007A8B67 /* Moya.framework in Frameworks */,
+				8DAC5BFC24C27DAC007A8B67 /* DifferenceKit.framework in Frameworks */,
+				8DAC5BE024C27B5B007A8B67 /* SwinjectAutoregistration.framework in Frameworks */,
+				8DAC5BE824C27B5C007A8B67 /* RxOptional.framework in Frameworks */,
+				8DAC5BDE24C27B5B007A8B67 /* DiffableDataSources.framework in Frameworks */,
+				8DAC5BEA24C27B5C007A8B67 /* Swinject.framework in Frameworks */,
+				8DAC5BDA24C27B5A007A8B67 /* RxSwift.framework in Frameworks */,
+				8DAC5BE624C27B5B007A8B67 /* RxCocoa.framework in Frameworks */,
+				8DAC5BF024C27B5D007A8B67 /* SDWebImage.framework in Frameworks */,
+				8DAC5BF224C27B5E007A8B67 /* ReactorKit.framework in Frameworks */,
+				8DAC5BF624C27B5F007A8B67 /* RxMoya.framework in Frameworks */,
+				8DAC5BFA24C27DAC007A8B67 /* Alamofire.framework in Frameworks */,
+				8DAC5BD824C27B5A007A8B67 /* RxRelay.framework in Frameworks */,
+				8DAC5BE424C27B5B007A8B67 /* ReactorKitRuntime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +130,13 @@
 		8DAC5B4224C1BA3B007A8B67 = {
 			isa = PBXGroup;
 			children = (
+				8DAC5BC624C275E5007A8B67 /* CarthageInput.xcfilelist */,
+				8DAC5BC524C275D4007A8B67 /* CarthageOutput.xcfilelist */,
 				8DAC5B4D24C1BA3B007A8B67 /* WantedlyChallenge */,
 				8DAC5B6424C1BA3C007A8B67 /* WantedlyChallengeTests */,
 				8DAC5B6F24C1BA3C007A8B67 /* WantedlyChallengeUITests */,
 				8DAC5B4C24C1BA3B007A8B67 /* Products */,
+				8DAC5BC724C27B59007A8B67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +153,11 @@
 		8DAC5B4D24C1BA3B007A8B67 /* WantedlyChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5BC424C2733B007A8B67 /* Routing */,
+				8DAC5BC324C2732F007A8B67 /* Repository */,
+				8DAC5BC224C27327007A8B67 /* Service */,
+				8DAC5BC124C27321007A8B67 /* Reactor */,
+				8DAC5BBE24C27308007A8B67 /* UI */,
 				8DAC5B4E24C1BA3B007A8B67 /* AppDelegate.swift */,
 				8DAC5B5024C1BA3B007A8B67 /* SceneDelegate.swift */,
 				8DAC5B5224C1BA3B007A8B67 /* ViewController.swift */,
@@ -128,6 +187,81 @@
 			path = WantedlyChallengeUITests;
 			sourceTree = "<group>";
 		};
+		8DAC5BBE24C27308007A8B67 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC5BC024C27316007A8B67 /* ViewController */,
+				8DAC5BBF24C2730D007A8B67 /* Component */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8DAC5BBF24C2730D007A8B67 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		8DAC5BC024C27316007A8B67 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8DAC5BC124C27321007A8B67 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
+		8DAC5BC224C27327007A8B67 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8DAC5BC324C2732F007A8B67 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		8DAC5BC424C2733B007A8B67 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		8DAC5BC724C27B59007A8B67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC5C0024C28801007A8B67 /* WeakMapTable.framework */,
+				8DAC5BD324C27B5A007A8B67 /* Alamofire.framework */,
+				8DAC5BCB24C27B5A007A8B67 /* DiffableDataSources.framework */,
+				8DAC5BCD24C27B5A007A8B67 /* DifferenceKit.framework */,
+				8DAC5BD624C27B5A007A8B67 /* Moya.framework */,
+				8DAC5BD524C27B5A007A8B67 /* ReactorKit.framework */,
+				8DAC5BCE24C27B5A007A8B67 /* ReactorKitRuntime.framework */,
+				8DAC5BCA24C27B5A007A8B67 /* RxBlocking.framework */,
+				8DAC5BCF24C27B5A007A8B67 /* RxCocoa.framework */,
+				8DAC5BD724C27B5A007A8B67 /* RxMoya.framework */,
+				8DAC5BD024C27B5A007A8B67 /* RxOptional.framework */,
+				8DAC5BC824C27B59007A8B67 /* RxRelay.framework */,
+				8DAC5BC924C27B5A007A8B67 /* RxSwift.framework */,
+				8DAC5BD424C27B5A007A8B67 /* SDWebImage.framework */,
+				8DAC5BD224C27B5A007A8B67 /* SDWebImageMapKit.framework */,
+				8DAC5BD124C27B5A007A8B67 /* Swinject.framework */,
+				8DAC5BCC24C27B5A007A8B67 /* SwinjectAutoregistration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +272,7 @@
 				8DAC5B4724C1BA3B007A8B67 /* Sources */,
 				8DAC5B4824C1BA3B007A8B67 /* Frameworks */,
 				8DAC5B4924C1BA3B007A8B67 /* Resources */,
+				8DAC5BF924C27B6C007A8B67 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -253,6 +388,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8DAC5BF924C27B6C007A8B67 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/CarthageInput.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/CarthageOutput.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8DAC5B4724C1BA3B007A8B67 /* Sources */ = {
@@ -436,6 +594,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8V9298F7HL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WantedlyChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,6 +617,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8V9298F7HL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WantedlyChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

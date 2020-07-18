@@ -34,6 +34,9 @@
 		8DAC5C0D24C2A167007A8B67 /* RecrutingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5C0C24C2A167007A8B67 /* RecrutingCollectionViewCell.xib */; };
 		8DAC5C0F24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C0E24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift */; };
 		8DAC5C1224C2B529007A8B67 /* loadXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1124C2B529007A8B67 /* loadXib.swift */; };
+		8DAC5C1624C2E35C007A8B67 /* RecrutingCatalogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1524C2E35C007A8B67 /* RecrutingCatalogView.xib */; };
+		8DAC5C1824C2E36F007A8B67 /* RecrutingCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1724C2E36F007A8B67 /* RecrutingCatalogViewController.swift */; };
+		8DAC5C1B24C2EDE2007A8B67 /* RecrutingCatalogViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1A24C2EDE2007A8B67 /* RecrutingCatalogViewReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		8DAC5C0C24C2A167007A8B67 /* RecrutingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecrutingCollectionViewCell.xib; sourceTree = "<group>"; };
 		8DAC5C0E24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecrutingCollectionViewCell.swift; sourceTree = "<group>"; };
 		8DAC5C1124C2B529007A8B67 /* loadXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadXib.swift; sourceTree = "<group>"; };
+		8DAC5C1524C2E35C007A8B67 /* RecrutingCatalogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecrutingCatalogView.xib; sourceTree = "<group>"; };
+		8DAC5C1724C2E36F007A8B67 /* RecrutingCatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecrutingCatalogViewController.swift; sourceTree = "<group>"; };
+		8DAC5C1A24C2EDE2007A8B67 /* RecrutingCatalogViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecrutingCatalogViewReactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,7 @@
 		8DAC5B4D24C1BA3B007A8B67 /* WantedlyChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C1C24C2EF3D007A8B67 /* Entity */,
 				8DAC5C1024C2A519007A8B67 /* Extension */,
 				8DAC5BC424C2733B007A8B67 /* Routing */,
 				8DAC5BC324C2732F007A8B67 /* Repository */,
@@ -222,6 +229,7 @@
 		8DAC5BC124C27321007A8B67 /* Reactor */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C1924C2EDC7007A8B67 /* RecrutingCatalog */,
 			);
 			path = Reactor;
 			sourceTree = "<group>";
@@ -316,6 +324,8 @@
 		8DAC5C1324C2B673007A8B67 /* RecrutingCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C1524C2E35C007A8B67 /* RecrutingCatalogView.xib */,
+				8DAC5C1724C2E36F007A8B67 /* RecrutingCatalogViewController.swift */,
 			);
 			path = RecrutingCatalog;
 			sourceTree = "<group>";
@@ -325,6 +335,21 @@
 			children = (
 			);
 			path = Recruting;
+			sourceTree = "<group>";
+		};
+		8DAC5C1924C2EDC7007A8B67 /* RecrutingCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC5C1A24C2EDE2007A8B67 /* RecrutingCatalogViewReactor.swift */,
+			);
+			path = RecrutingCatalog;
+			sourceTree = "<group>";
+		};
+		8DAC5C1C24C2EF3D007A8B67 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,6 +461,7 @@
 				8DAC5C0824C2A130007A8B67 /* RecrutingCellView.xib in Resources */,
 				8DAC5C0D24C2A167007A8B67 /* RecrutingCollectionViewCell.xib in Resources */,
 				8DAC5B5824C1BA3C007A8B67 /* Assets.xcassets in Resources */,
+				8DAC5C1624C2E35C007A8B67 /* RecrutingCatalogView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +513,8 @@
 				8DAC5C0A24C2A140007A8B67 /* RecrutingCellView.swift in Sources */,
 				8DAC5C0F24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift in Sources */,
 				8DAC5B5124C1BA3B007A8B67 /* SceneDelegate.swift in Sources */,
+				8DAC5C1824C2E36F007A8B67 /* RecrutingCatalogViewController.swift in Sources */,
+				8DAC5C1B24C2EDE2007A8B67 /* RecrutingCatalogViewReactor.swift in Sources */,
 				8DAC5C1224C2B529007A8B67 /* loadXib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

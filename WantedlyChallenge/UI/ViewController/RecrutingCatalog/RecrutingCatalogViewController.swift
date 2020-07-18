@@ -6,4 +6,16 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
-import Foundation
+import ReactorKit
+import RxSwift
+import UIKit
+
+final class RecrutingCatalogViewController: UIViewController {
+    var disposeBag = DisposeBag()
+}
+
+extension RecrutingCatalogViewController: View {
+    func bind(reactor: RecrutingCatalogViewReactor) {
+        
+    }
+}

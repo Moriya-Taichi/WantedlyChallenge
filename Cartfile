@@ -1,5 +1,6 @@
 #ReactorKit
 github "ReactorKit/ReactorKit" == 2.1
+github "ReactorKit/WeakMapTable" == 1.1
 
 #Reactive
 github "ReactiveX/RxSwift" == 5.1

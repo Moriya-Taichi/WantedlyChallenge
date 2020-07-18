@@ -11,18 +11,22 @@ $(SRCROOT)/Carthage/Build/iOS/SwinjectAutoregistration.framework
 #ReactorKit
 $(SRCROOT)/Carthage/Build/iOS/ReactorKit.framework
 $(SRCROOT)/Carthage/Build/iOS/ReactorKitRuntime.framework
+$(SRCROOT)/Carthage/Build/iOS/WeakMapTable.framework
 
 #ReactiveExtension
 $(SRCROOT)/Carthage/Build/iOS/RxSwift.framework
 $(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework
 $(SRCROOT)/Carthage/Build/iOS/RxRelay.framework
 $(SRCROOT)/Carthage/Build/iOS/RxOptional.framework
+$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework
 
 #Network
 $(SRCROOT)/Carthage/Build/iOS/Moya.framework
+$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework
 
 #DataSource
 $(SRCROOT)/Carthage/Build/iOS/DiffableDataSources.framework
+$(SRCROOT)/Carthage/Build/iOS/DifferenceKit.framework
 
 #image
 $(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework

@@ -7,3 +7,24 @@
 //
 
 import Foundation
+import RxSwift
+import RxMoya
+import Moya
+
+protocol RecruitmentRepositoryType {
+    func fetchRecruitment(input: WantedlyRequestType)
+        -> Single<[Recruitment]>
+}
+
+struct RecruitmentRepository: RecruitmentRepositoryType {
+
+    let provider: MoyaProvider<WantedlyRequestType> = .init()
+
+    func fetchRecruitment(input: WantedlyRequestType)
+        -> Single<[Recruitment]> {
+            provider.rx.request(input)
+                .map([Recruitment].self)
+    }
+}
+
+

@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct Image: Codable {
+    let original: String
+}

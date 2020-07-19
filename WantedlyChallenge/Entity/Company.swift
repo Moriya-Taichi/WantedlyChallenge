@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+struct Company: Codable {
+    let id: Int
+    let name: String
+    let founder: String
+    let foundedOn: String
+    let addressPrefix: String
+    let addressSuffix: String
+    let latitude: Double
+    let longnitude: Double
+    let url: String
+    let fontColorCode: String
+    let avatar: Image
+}

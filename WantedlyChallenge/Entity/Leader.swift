@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct Leader: Codable {
+    let nameJa: String?
+    let nameEn: String?
+    let facebookUid: String?
+}

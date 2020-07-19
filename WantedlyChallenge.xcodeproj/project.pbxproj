@@ -42,6 +42,10 @@
 		8DAC5C2224C3FDEF007A8B67 /* Leader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2124C3FDEF007A8B67 /* Leader.swift */; };
 		8DAC5C2424C3FDFA007A8B67 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2324C3FDFA007A8B67 /* Company.swift */; };
 		8DAC5C2624C3FE6C007A8B67 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2524C3FE6C007A8B67 /* Staff.swift */; };
+		8DAC5C2824C42CB1007A8B67 /* RecruitmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2724C42CB1007A8B67 /* RecruitmentRepository.swift */; };
+		8DAC5C2A24C42D69007A8B67 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2924C42D69007A8B67 /* Page.swift */; };
+		8DAC5C2E24C4303B007A8B67 /* WantedlyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2D24C4303B007A8B67 /* WantedlyRequest.swift */; };
+		8DAC5C3024C500BF007A8B67 /* RecruitmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2F24C500BF007A8B67 /* RecruitmentService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +110,10 @@
 		8DAC5C2124C3FDEF007A8B67 /* Leader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leader.swift; sourceTree = "<group>"; };
 		8DAC5C2324C3FDFA007A8B67 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		8DAC5C2524C3FE6C007A8B67 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
+		8DAC5C2724C42CB1007A8B67 /* RecruitmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentRepository.swift; sourceTree = "<group>"; };
+		8DAC5C2924C42D69007A8B67 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		8DAC5C2D24C4303B007A8B67 /* WantedlyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantedlyRequest.swift; sourceTree = "<group>"; };
+		8DAC5C2F24C500BF007A8B67 /* RecruitmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +183,7 @@
 		8DAC5B4D24C1BA3B007A8B67 /* WantedlyChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C3124C50D1B007A8B67 /* CellModel */,
 				8DAC5C1C24C2EF3D007A8B67 /* Entity */,
 				8DAC5C1024C2A519007A8B67 /* Extension */,
 				8DAC5BC424C2733B007A8B67 /* Routing */,
@@ -247,6 +256,7 @@
 		8DAC5BC224C27327007A8B67 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C2F24C500BF007A8B67 /* RecruitmentService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -254,6 +264,8 @@
 		8DAC5BC324C2732F007A8B67 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C2724C42CB1007A8B67 /* RecruitmentRepository.swift */,
+				8DAC5C2D24C4303B007A8B67 /* WantedlyRequest.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -363,8 +375,16 @@
 				8DAC5C2124C3FDEF007A8B67 /* Leader.swift */,
 				8DAC5C2324C3FDFA007A8B67 /* Company.swift */,
 				8DAC5C2524C3FE6C007A8B67 /* Staff.swift */,
+				8DAC5C2924C42D69007A8B67 /* Page.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		8DAC5C3124C50D1B007A8B67 /* CellModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CellModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -524,11 +544,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DAC5C2E24C4303B007A8B67 /* WantedlyRequest.swift in Sources */,
 				8DAC5C2224C3FDEF007A8B67 /* Leader.swift in Sources */,
 				8DAC5B4F24C1BA3B007A8B67 /* AppDelegate.swift in Sources */,
 				8DAC5C2024C3FDE8007A8B67 /* Image.swift in Sources */,
 				8DAC5C0A24C2A140007A8B67 /* RecrutingCellView.swift in Sources */,
+				8DAC5C2A24C42D69007A8B67 /* Page.swift in Sources */,
+				8DAC5C3024C500BF007A8B67 /* RecruitmentService.swift in Sources */,
 				8DAC5C0F24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift in Sources */,
+				8DAC5C2824C42CB1007A8B67 /* RecruitmentRepository.swift in Sources */,
 				8DAC5B5124C1BA3B007A8B67 /* SceneDelegate.swift in Sources */,
 				8DAC5C2624C3FE6C007A8B67 /* Staff.swift in Sources */,
 				8DAC5C1E24C3D714007A8B67 /* Recruitment.swift in Sources */,

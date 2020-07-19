@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct Staff: Codable {
+    let userId: String
+    let isLeader: Bool
+    let name: String
+    let description: String
+    let facebookUid: String?
+}

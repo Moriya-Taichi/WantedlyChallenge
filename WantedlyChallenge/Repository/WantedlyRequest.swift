@@ -38,13 +38,18 @@ extension WantedlyRequestType: TargetType {
     }
 
     var sampleData: Data {
-        let mockData = Bundle.main.path(forResource: "mock",
-                                        ofType: "json")
-        return 
+        guard
+            let mockPath = Bundle.main.path(forResource: "mock",
+                                            ofType: "json"),
+            let data = FileHandle(forReadingAtPath: mockPath)?.readDataToEndOfFile()
+            else {
+                return .init()
+        }
+        return data
     }
 
     var task: Task {
-
+        return .requestPlain
     }
 
     var headers: [String : String]? {

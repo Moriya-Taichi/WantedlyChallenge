@@ -37,6 +37,11 @@
 		8DAC5C1624C2E35C007A8B67 /* RecrutingCatalogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1524C2E35C007A8B67 /* RecrutingCatalogView.xib */; };
 		8DAC5C1824C2E36F007A8B67 /* RecrutingCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1724C2E36F007A8B67 /* RecrutingCatalogViewController.swift */; };
 		8DAC5C1B24C2EDE2007A8B67 /* RecrutingCatalogViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1A24C2EDE2007A8B67 /* RecrutingCatalogViewReactor.swift */; };
+		8DAC5C1E24C3D714007A8B67 /* Recruitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1D24C3D714007A8B67 /* Recruitment.swift */; };
+		8DAC5C2024C3FDE8007A8B67 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1F24C3FDE8007A8B67 /* Image.swift */; };
+		8DAC5C2224C3FDEF007A8B67 /* Leader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2124C3FDEF007A8B67 /* Leader.swift */; };
+		8DAC5C2424C3FDFA007A8B67 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2324C3FDFA007A8B67 /* Company.swift */; };
+		8DAC5C2624C3FE6C007A8B67 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2524C3FE6C007A8B67 /* Staff.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +101,11 @@
 		8DAC5C1524C2E35C007A8B67 /* RecrutingCatalogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecrutingCatalogView.xib; sourceTree = "<group>"; };
 		8DAC5C1724C2E36F007A8B67 /* RecrutingCatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecrutingCatalogViewController.swift; sourceTree = "<group>"; };
 		8DAC5C1A24C2EDE2007A8B67 /* RecrutingCatalogViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecrutingCatalogViewReactor.swift; sourceTree = "<group>"; };
+		8DAC5C1D24C3D714007A8B67 /* Recruitment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruitment.swift; sourceTree = "<group>"; };
+		8DAC5C1F24C3FDE8007A8B67 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		8DAC5C2124C3FDEF007A8B67 /* Leader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leader.swift; sourceTree = "<group>"; };
+		8DAC5C2324C3FDFA007A8B67 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		8DAC5C2524C3FE6C007A8B67 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +358,11 @@
 		8DAC5C1C24C2EF3D007A8B67 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C1D24C3D714007A8B67 /* Recruitment.swift */,
+				8DAC5C1F24C3FDE8007A8B67 /* Image.swift */,
+				8DAC5C2124C3FDEF007A8B67 /* Leader.swift */,
+				8DAC5C2324C3FDFA007A8B67 /* Company.swift */,
+				8DAC5C2524C3FE6C007A8B67 /* Staff.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -509,10 +524,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DAC5C2224C3FDEF007A8B67 /* Leader.swift in Sources */,
 				8DAC5B4F24C1BA3B007A8B67 /* AppDelegate.swift in Sources */,
+				8DAC5C2024C3FDE8007A8B67 /* Image.swift in Sources */,
 				8DAC5C0A24C2A140007A8B67 /* RecrutingCellView.swift in Sources */,
 				8DAC5C0F24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift in Sources */,
 				8DAC5B5124C1BA3B007A8B67 /* SceneDelegate.swift in Sources */,
+				8DAC5C2624C3FE6C007A8B67 /* Staff.swift in Sources */,
+				8DAC5C1E24C3D714007A8B67 /* Recruitment.swift in Sources */,
+				8DAC5C2424C3FDFA007A8B67 /* Company.swift in Sources */,
 				8DAC5C1824C2E36F007A8B67 /* RecrutingCatalogViewController.swift in Sources */,
 				8DAC5C1B24C2EDE2007A8B67 /* RecrutingCatalogViewReactor.swift in Sources */,
 				8DAC5C1224C2B529007A8B67 /* loadXib.swift in Sources */,

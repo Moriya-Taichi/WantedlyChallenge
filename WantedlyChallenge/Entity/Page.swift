@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct Page<T> where T: Codable {
+    let pageNumber: Int
+    let collection: [T]
+}

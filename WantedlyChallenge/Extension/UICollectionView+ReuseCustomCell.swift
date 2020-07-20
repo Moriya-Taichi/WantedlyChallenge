@@ -6,4 +6,14 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UICollectionView {
+    func dequeReusableCell<T: UICollectionViewCell>(_ cellType: T.Type,
+                                                    indexPath: IndexPath)
+        -> T?
+    {
+        return self.dequeueReusableCell(withReuseIdentifier: String(describing: cellType),
+                                        for: indexPath) as? T
+    }
+}

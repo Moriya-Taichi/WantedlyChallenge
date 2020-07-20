@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Leader: Codable {
+struct Leader: Codable, Hashable {
     let nameJa: String?
     let nameEn: String?
     let facebookUid: String?

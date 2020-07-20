@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Staff: Codable {
+struct Staff: Codable, Hashable {
     let userId: String
     let isLeader: Bool
     let name: String

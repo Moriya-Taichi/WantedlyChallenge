@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Recruitment: Codable {
+struct Recruitment: Codable, Hashable {
     let id: Int
     let title: String
     let description: String

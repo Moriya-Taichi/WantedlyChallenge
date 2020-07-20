@@ -6,4 +6,6 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
-import Foundation
+enum Section {
+    case recruitmentCatalog
+}

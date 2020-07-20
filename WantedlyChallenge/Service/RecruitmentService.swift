@@ -23,7 +23,7 @@ struct RecruitmentService: RecruitmentServiceType {
     }
 
     func fetchRecruitment(page: Int) -> Observable<Page<Recruitment>> {
-        let input = WantedlyRequestType.nothing(page)
+        let input = WantedlyRequestType.nothing(page + 1)
         return repository.fetchRecruitment(input: input)
             .map { recruitments in
                 return Page(pageNumber: page + 1, collection: recruitments)
@@ -33,7 +33,7 @@ struct RecruitmentService: RecruitmentServiceType {
 
     func serchRecruitment(word: String, page: Int)
         -> Observable<Page<Recruitment>> {
-            let input = WantedlyRequestType.search((word: word, page: page))
+            let input = WantedlyRequestType.search((word: word, page: page + 1))
             return repository.fetchRecruitment(input: input)
                 .map { recruitments in
                     return Page(pageNumber: page + 1, collection: recruitments)

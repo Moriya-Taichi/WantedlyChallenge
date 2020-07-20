@@ -46,6 +46,8 @@
 		8DAC5C2A24C42D69007A8B67 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2924C42D69007A8B67 /* Page.swift */; };
 		8DAC5C2E24C4303B007A8B67 /* WantedlyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2D24C4303B007A8B67 /* WantedlyRequest.swift */; };
 		8DAC5C3024C500BF007A8B67 /* RecruitmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2F24C500BF007A8B67 /* RecruitmentService.swift */; };
+		8DAC5C3324C50FED007A8B67 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C3224C50FED007A8B67 /* SectionModel.swift */; };
+		8DAC5C3524C50FF7007A8B67 /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C3424C50FF7007A8B67 /* CellItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		8DAC5C2924C42D69007A8B67 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		8DAC5C2D24C4303B007A8B67 /* WantedlyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantedlyRequest.swift; sourceTree = "<group>"; };
 		8DAC5C2F24C500BF007A8B67 /* RecruitmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentService.swift; sourceTree = "<group>"; };
+		8DAC5C3224C50FED007A8B67 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
+		8DAC5C3424C50FF7007A8B67 /* CellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +387,8 @@
 		8DAC5C3124C50D1B007A8B67 /* CellModel */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C3224C50FED007A8B67 /* SectionModel.swift */,
+				8DAC5C3424C50FF7007A8B67 /* CellItem.swift */,
 			);
 			path = CellModel;
 			sourceTree = "<group>";
@@ -554,11 +560,13 @@
 				8DAC5C0F24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift in Sources */,
 				8DAC5C2824C42CB1007A8B67 /* RecruitmentRepository.swift in Sources */,
 				8DAC5B5124C1BA3B007A8B67 /* SceneDelegate.swift in Sources */,
+				8DAC5C3524C50FF7007A8B67 /* CellItem.swift in Sources */,
 				8DAC5C2624C3FE6C007A8B67 /* Staff.swift in Sources */,
 				8DAC5C1E24C3D714007A8B67 /* Recruitment.swift in Sources */,
 				8DAC5C2424C3FDFA007A8B67 /* Company.swift in Sources */,
 				8DAC5C1824C2E36F007A8B67 /* RecrutingCatalogViewController.swift in Sources */,
 				8DAC5C1B24C2EDE2007A8B67 /* RecrutingCatalogViewReactor.swift in Sources */,
+				8DAC5C3324C50FED007A8B67 /* SectionModel.swift in Sources */,
 				8DAC5C1224C2B529007A8B67 /* loadXib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

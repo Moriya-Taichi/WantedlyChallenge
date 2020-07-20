@@ -8,7 +8,18 @@
 
 import Foundation
 
-struct Page<T> where T: Codable {
+struct Page<T> {
     let pageNumber: Int
     let collection: [T]
+
+    func map<Output>(_ transform: (T) -> Output) -> Page<Output> {
+        let mappedCollection = self.collection.map(transform)
+        return Page<Output>(pageNumber: self.pageNumber,
+                            collection: mappedCollection)
+    }
+
+    func paginate(_ page: Self) -> Self {
+        return Page(pageNumber: page.pageNumber,
+                    collection: self.collection + page.collection)
+    }
 }

@@ -48,6 +48,10 @@
 		8DAC5C3024C500BF007A8B67 /* RecruitmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2F24C500BF007A8B67 /* RecruitmentService.swift */; };
 		8DAC5C3324C50FED007A8B67 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C3224C50FED007A8B67 /* SectionModel.swift */; };
 		8DAC5C3524C50FF7007A8B67 /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C3424C50FF7007A8B67 /* CellItem.swift */; };
+		8DAC5C3724C52C7F007A8B67 /* UICollectionView+CustomCellRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C3624C52C7F007A8B67 /* UICollectionView+CustomCellRegister.swift */; };
+		8DAC5C3924C52E26007A8B67 /* UICollectionView+ReuseCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C3824C52E26007A8B67 /* UICollectionView+ReuseCustomCell.swift */; };
+		8DAC5C3B24C53699007A8B67 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C3A24C53699007A8B67 /* UIViewController+Rx.swift */; };
+		8DAC5C3D24C536AA007A8B67 /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C3C24C536AA007A8B67 /* UIScrollView+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +122,10 @@
 		8DAC5C2F24C500BF007A8B67 /* RecruitmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentService.swift; sourceTree = "<group>"; };
 		8DAC5C3224C50FED007A8B67 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		8DAC5C3424C50FF7007A8B67 /* CellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
+		8DAC5C3624C52C7F007A8B67 /* UICollectionView+CustomCellRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+CustomCellRegister.swift"; sourceTree = "<group>"; };
+		8DAC5C3824C52E26007A8B67 /* UICollectionView+ReuseCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ReuseCustomCell.swift"; sourceTree = "<group>"; };
+		8DAC5C3A24C53699007A8B67 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		8DAC5C3C24C536AA007A8B67 /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +351,10 @@
 			isa = PBXGroup;
 			children = (
 				8DAC5C1124C2B529007A8B67 /* loadXib.swift */,
+				8DAC5C3624C52C7F007A8B67 /* UICollectionView+CustomCellRegister.swift */,
+				8DAC5C3824C52E26007A8B67 /* UICollectionView+ReuseCustomCell.swift */,
+				8DAC5C3A24C53699007A8B67 /* UIViewController+Rx.swift */,
+				8DAC5C3C24C536AA007A8B67 /* UIScrollView+Rx.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -558,16 +570,20 @@
 				8DAC5C2A24C42D69007A8B67 /* Page.swift in Sources */,
 				8DAC5C3024C500BF007A8B67 /* RecruitmentService.swift in Sources */,
 				8DAC5C0F24C2A1DE007A8B67 /* RecrutingCollectionViewCell.swift in Sources */,
+				8DAC5C3924C52E26007A8B67 /* UICollectionView+ReuseCustomCell.swift in Sources */,
 				8DAC5C2824C42CB1007A8B67 /* RecruitmentRepository.swift in Sources */,
 				8DAC5B5124C1BA3B007A8B67 /* SceneDelegate.swift in Sources */,
 				8DAC5C3524C50FF7007A8B67 /* CellItem.swift in Sources */,
 				8DAC5C2624C3FE6C007A8B67 /* Staff.swift in Sources */,
+				8DAC5C3B24C53699007A8B67 /* UIViewController+Rx.swift in Sources */,
 				8DAC5C1E24C3D714007A8B67 /* Recruitment.swift in Sources */,
 				8DAC5C2424C3FDFA007A8B67 /* Company.swift in Sources */,
 				8DAC5C1824C2E36F007A8B67 /* RecrutingCatalogViewController.swift in Sources */,
+				8DAC5C3724C52C7F007A8B67 /* UICollectionView+CustomCellRegister.swift in Sources */,
 				8DAC5C1B24C2EDE2007A8B67 /* RecrutingCatalogViewReactor.swift in Sources */,
 				8DAC5C3324C50FED007A8B67 /* SectionModel.swift in Sources */,
 				8DAC5C1224C2B529007A8B67 /* loadXib.swift in Sources */,
+				8DAC5C3D24C536AA007A8B67 /* UIScrollView+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,14 @@
 
 import Foundation
 
-struct Page<T> {
+struct Page<T: Hashable>: Equatable {
+
     let pageNumber: Int
     let collection: [T]
+
+    static func == (lhs: Page<T>, rhs: Page<T>) -> Bool {
+        return lhs.collection.hashValue == rhs.collection.hashValue
+    }
 
     func map<Output>(_ transform: (T) -> Output) -> Page<Output> {
         let mappedCollection = self.collection.map(transform)

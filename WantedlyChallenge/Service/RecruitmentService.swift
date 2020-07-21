@@ -12,14 +12,24 @@ import RxSwift
 protocol RecruitmentServiceType {
     func fetchRecruitment(page: Int) -> Observable<Page<Recruitment>>
     func serchRecruitment(word: String, page: Int) -> Observable<Page<Recruitment>>
+    func fetchRecruitment(id: Int) -> Observable<Recruitment>
 }
 
 struct RecruitmentService: RecruitmentServiceType {
 
-    let repository: RecruitmentRepositoryType
+    private let repository: RecruitmentRepositoryType
+    private let store: RecruitmentStoreType
 
-    init(repository: RecruitmentRepositoryType) {
+    enum RecruitmentServiceError: Error {
+        case fetchFailed
+    }
+
+    init(
+        repository: RecruitmentRepositoryType,
+        store: RecruitmentStoreType
+    ) {
         self.repository = repository
+        self.store = store
     }
 
     func fetchRecruitment(page: Int) -> Observable<Page<Recruitment>> {
@@ -28,6 +38,14 @@ struct RecruitmentService: RecruitmentServiceType {
             .map { recruitments in
                 return Page(pageNumber: page + 1, collection: recruitments)
             }
+            .do(onSuccess: { newPage in
+                if page == 0 {
+                    self.store.clear()
+                    self.store.store(recruitments: newPage.collection)
+                } else {
+                    self.store.store(recruitments: newPage.collection)
+                }
+            })
             .asObservable()
     }
 
@@ -38,6 +56,25 @@ struct RecruitmentService: RecruitmentServiceType {
                 .map { recruitments in
                     return Page(pageNumber: page + 1, collection: recruitments)
                 }
+                .do(onSuccess: { newPage in
+                    if page == 0 {
+                        self.store.clear()
+                        self.store.store(recruitments: newPage.collection)
+                    } else {
+                        self.store.store(recruitments: newPage.collection)
+                    }
+                })
                 .asObservable()
+    }
+
+    func fetchRecruitment(id: Int) -> Observable<Recruitment> {
+        return Observable.create { observer in
+            if let recruitment = self.store.load(id: id) {
+                observer.onNext(recruitment)
+            } else {
+                observer.onError(RecruitmentServiceError.fetchFailed)
+            }
+            return Disposables.create()
+        }
     }
 }

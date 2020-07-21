@@ -25,12 +25,7 @@ extension WantedlyRequestType: TargetType {
     }
 
     var path: String {
-        switch self {
-        case let .nothing(page):
-            return "?page\(page)"
-        case let .search(param):
-            return "?q=\(param.word)&page=\(param.page)"
-        }
+        return ""
     }
 
     var method: Moya.Method {
@@ -49,7 +44,14 @@ extension WantedlyRequestType: TargetType {
     }
 
     var task: Task {
-        return .requestPlain
+        switch self {
+        case let .nothing(pageNumber):
+            return .requestParameters(parameters: ["page": pageNumber],
+                                      encoding: Moya.URLEncoding.queryString)
+        case let .search((word, pageNumber)):
+            return .requestParameters(parameters: ["q": word, "page": pageNumber],
+                                      encoding:  Moya.URLEncoding.queryString)
+        }
     }
 
     var headers: [String : String]? {

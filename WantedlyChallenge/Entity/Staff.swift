@@ -9,9 +9,9 @@
 import Foundation
 
 struct Staff: Codable, Hashable {
-    let userId: String
+    let userId: Int
     let isLeader: Bool
     let name: String
-    let description: String
+    let description: String?
     let facebookUid: String?
 }

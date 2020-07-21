@@ -8,6 +8,7 @@
 
 import ReactorKit
 import RxSwift
+import Foundation
 
 final class RecrutingCatalogViewReactor: Reactor {
 
@@ -42,15 +43,18 @@ final class RecrutingCatalogViewReactor: Reactor {
         let endLoading: Observable<Mutation> = .just(.setIsLoading(false))
         switch action {
         case .load:
+            guard !currentState.isLoading else { return .empty() }
             let rectuitment = recruitmentService
                 .fetchRecruitment(page: 0)
                 .map { $0.map(CellItem.recruitmentCellItem) }
                 .map(Mutation.setRecruitments)
             return .concat([startLoading, rectuitment, endLoading])
         case let .search(word):
-            guard let word = word, !word.isEmpty else {
-                self.action.onNext(.load)
-                return .empty()
+            guard
+                let word = word,
+                !word.isEmpty
+                else {
+                    return .empty()
             }
             let serchedRecruitments = recruitmentService
                 .serchRecruitment(word: word,
@@ -59,12 +63,25 @@ final class RecrutingCatalogViewReactor: Reactor {
                 .map(Mutation.setRecruitments)
             return .concat([startLoading, serchedRecruitments, endLoading])
         case let .paginate(word):
+            guard
+                !currentState.isLoading &&
+                    !currentState.page.collection.isEmpty
+                else {
+                    return .empty()
+            }
             guard let word = word, !word.isEmpty else {
                 let recruitmentPagination = recruitmentService
                     .fetchRecruitment(page: currentState.page.pageNumber)
                     .map { $0.map(CellItem.recruitmentCellItem) }
                     .map { self.currentState.page.paginate($0) }
                     .map(Mutation.setRecruitments)
+                    .takeUntil(self.action.filter {
+                        if case .search = $0 {
+                            return true
+                        } else {
+                            return false
+                        }
+                    })
                 return .concat([startLoading, recruitmentPagination, endLoading])
             }
             let serchPagenation = recruitmentService
@@ -73,7 +90,25 @@ final class RecrutingCatalogViewReactor: Reactor {
                 .map { $0.map(CellItem.recruitmentCellItem) }
                 .map { self.currentState.page.paginate($0) }
                 .map(Mutation.setRecruitments)
+                .takeUntil(self.action.filter {
+                    if case .search = $0 {
+                        return true
+                    } else {
+                        return false
+                    }
+                })
             return .concat([startLoading, serchPagenation, endLoading])
         }
+    }
+
+    func reduce(state: State, mutation: Mutation) -> State {
+        var newState = state
+        switch mutation {
+        case let .setIsLoading(isLoading):
+            newState.isLoading = isLoading
+        case let .setRecruitments(recruitments):
+            newState.page = recruitments
+        }
+        return newState
     }
 }

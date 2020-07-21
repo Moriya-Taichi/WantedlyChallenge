@@ -8,6 +8,7 @@
 
 import DiffableDataSources
 import ReactorKit
+import RxOptional
 import RxSwift
 import UIKit
 
@@ -17,10 +18,6 @@ final class RecrutingCatalogViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
             collectionView.register(RecrutingCollectionViewCell.self)
-            let layout = UICollectionViewFlowLayout()
-            layout.itemSize = CGSize(width: self.view.frame.width * 0.9,
-                                     height: self.view.frame.height / 4)
-            collectionView.setCollectionViewLayout(layout, animated: true)
         }
     }
 
@@ -36,31 +33,35 @@ final class RecrutingCatalogViewController: UIViewController {
                 else {
                     return UICollectionViewCell()
             }
+            cell.setCellContents(recruitment: recruitment)
             return cell
         }
     }
-
-    private var snapshot = DiffableDataSourceSnapshot<Section, CellItem>()
 
     var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        snapshot.appendSections([.recruitmentCatalog])
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: self.view.frame.width * 0.85,
+                                 height: self.view.frame.height / 3)
+        collectionView.setCollectionViewLayout(layout, animated: true)
         func setUpRx() {
 
         }
     }
 }
 
-extension RecrutingCatalogViewController: View {
+extension RecrutingCatalogViewController: StoryboardView {
     func bind(reactor: RecrutingCatalogViewReactor) {
-        self.rx.viewDidLoad
+        Observable<Void>.just(())
             .map { _ in Reactor.Action.load }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
 
         searchBar.rx.text
+            .distinctUntilChanged()
+            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .map(Reactor.Action.search)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
@@ -77,8 +78,11 @@ extension RecrutingCatalogViewController: View {
                 guard let self = self else {
                     return
                 }
-                self.snapshot.appendItems(page.collection)
-                self.dataSource.apply(self.snapshot)
+                var snapshot = DiffableDataSourceSnapshot<Section, CellItem>()
+                snapshot.appendSections([.recruitmentCatalog])
+                snapshot.appendItems(page.collection, toSection: .recruitmentCatalog)
+                snapshot.reloadSections([.recruitmentCatalog])
+                self.dataSource.apply(snapshot, animatingDifferences: true)
             })
             .disposed(by: disposeBag)
     }

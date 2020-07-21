@@ -11,12 +11,12 @@ import Foundation
 struct Company: Codable, Hashable {
     let id: Int
     let name: String
-    let founder: String
-    let foundedOn: String
+    let founder: String?
+    let foundedOn: String?
     let addressPrefix: String
     let addressSuffix: String
-    let latitude: Double
-    let longnitude: Double
+    let latitude: Double?
+    let longitude: Double?
     let url: String
     let fontColorCode: String
     let avatar: Image

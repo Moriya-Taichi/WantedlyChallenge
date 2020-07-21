@@ -16,7 +16,7 @@ protocol RecruitmentCreatable {
 extension RecruitmentCreatable where Self: NavigationRouter {
     func createRecruitmentCatalog() -> RecruitmentCatalogViewController {
         let recruitmentViewController = RecruitmentCatalogViewController()
-        recruitmentViewController.reactor = RecrutingCatalogViewReactor(recruitmentService: self.container~>)
+        recruitmentViewController.reactor = RecruitmentCatalogViewReactor(recruitmentService: self.container~>)
         return recruitmentViewController
     }
 }

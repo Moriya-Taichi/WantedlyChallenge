@@ -10,7 +10,7 @@ import ReactorKit
 import RxSwift
 import Foundation
 
-final class RecrutingCatalogViewReactor: Reactor {
+final class RecruitmentCatalogViewReactor: Reactor {
 
     enum Action {
         case load

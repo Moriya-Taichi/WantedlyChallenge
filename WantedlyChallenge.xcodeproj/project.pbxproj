@@ -52,6 +52,11 @@
 		8DAC5C3924C52E26007A8B67 /* UICollectionView+ReuseCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C3824C52E26007A8B67 /* UICollectionView+ReuseCustomCell.swift */; };
 		8DAC5C3B24C53699007A8B67 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C3A24C53699007A8B67 /* UIViewController+Rx.swift */; };
 		8DAC5C3D24C536AA007A8B67 /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C3C24C536AA007A8B67 /* UIScrollView+Rx.swift */; };
+		8DAC5C4324C5507E007A8B67 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C4224C5507E007A8B67 /* Container.swift */; };
+		8DAC5C4524C56255007A8B67 /* RecruitmentCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C4424C56255007A8B67 /* RecruitmentCreatable.swift */; };
+		8DAC5C4824C56277007A8B67 /* RecruitmentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C4724C56277007A8B67 /* RecruitmentRouter.swift */; };
+		8DAC5C4A24C57877007A8B67 /* InitialRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C4924C57877007A8B67 /* InitialRouter.swift */; };
+		8DAC5C4F24C5923A007A8B67 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C4E24C5923A007A8B67 /* Parser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +131,11 @@
 		8DAC5C3824C52E26007A8B67 /* UICollectionView+ReuseCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ReuseCustomCell.swift"; sourceTree = "<group>"; };
 		8DAC5C3A24C53699007A8B67 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		8DAC5C3C24C536AA007A8B67 /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
+		8DAC5C4224C5507E007A8B67 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		8DAC5C4424C56255007A8B67 /* RecruitmentCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentCreatable.swift; sourceTree = "<group>"; };
+		8DAC5C4724C56277007A8B67 /* RecruitmentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentRouter.swift; sourceTree = "<group>"; };
+		8DAC5C4924C57877007A8B67 /* InitialRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialRouter.swift; sourceTree = "<group>"; };
+		8DAC5C4E24C5923A007A8B67 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +205,8 @@
 		8DAC5B4D24C1BA3B007A8B67 /* WantedlyChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C4D24C5922C007A8B67 /* Utility */,
+				8DAC5C4124C54EAF007A8B67 /* Container */,
 				8DAC5C3124C50D1B007A8B67 /* CellModel */,
 				8DAC5C1C24C2EF3D007A8B67 /* Entity */,
 				8DAC5C1024C2A519007A8B67 /* Extension */,
@@ -285,6 +297,9 @@
 		8DAC5BC424C2733B007A8B67 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C4624C5625F007A8B67 /* Router */,
+				8DAC5C4024C54C63007A8B67 /* Presentable */,
+				8DAC5C3F24C54C58007A8B67 /* Creatable */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -403,6 +418,46 @@
 				8DAC5C3424C50FF7007A8B67 /* CellItem.swift */,
 			);
 			path = CellModel;
+			sourceTree = "<group>";
+		};
+		8DAC5C3F24C54C58007A8B67 /* Creatable */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC5C4424C56255007A8B67 /* RecruitmentCreatable.swift */,
+			);
+			path = Creatable;
+			sourceTree = "<group>";
+		};
+		8DAC5C4024C54C63007A8B67 /* Presentable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentable;
+			sourceTree = "<group>";
+		};
+		8DAC5C4124C54EAF007A8B67 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC5C4224C5507E007A8B67 /* Container.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		8DAC5C4624C5625F007A8B67 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC5C4724C56277007A8B67 /* RecruitmentRouter.swift */,
+				8DAC5C4924C57877007A8B67 /* InitialRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8DAC5C4D24C5922C007A8B67 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC5C4E24C5923A007A8B67 /* Parser.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -573,6 +628,7 @@
 				8DAC5C3924C52E26007A8B67 /* UICollectionView+ReuseCustomCell.swift in Sources */,
 				8DAC5C2824C42CB1007A8B67 /* RecruitmentRepository.swift in Sources */,
 				8DAC5B5124C1BA3B007A8B67 /* SceneDelegate.swift in Sources */,
+				8DAC5C4824C56277007A8B67 /* RecruitmentRouter.swift in Sources */,
 				8DAC5C3524C50FF7007A8B67 /* CellItem.swift in Sources */,
 				8DAC5C2624C3FE6C007A8B67 /* Staff.swift in Sources */,
 				8DAC5C3B24C53699007A8B67 /* UIViewController+Rx.swift in Sources */,
@@ -580,7 +636,11 @@
 				8DAC5C2424C3FDFA007A8B67 /* Company.swift in Sources */,
 				8DAC5C1824C2E36F007A8B67 /* RecrutingCatalogViewController.swift in Sources */,
 				8DAC5C3724C52C7F007A8B67 /* UICollectionView+CustomCellRegister.swift in Sources */,
+				8DAC5C4A24C57877007A8B67 /* InitialRouter.swift in Sources */,
 				8DAC5C1B24C2EDE2007A8B67 /* RecrutingCatalogViewReactor.swift in Sources */,
+				8DAC5C4524C56255007A8B67 /* RecruitmentCreatable.swift in Sources */,
+				8DAC5C4324C5507E007A8B67 /* Container.swift in Sources */,
+				8DAC5C4F24C5923A007A8B67 /* Parser.swift in Sources */,
 				8DAC5C3324C50FED007A8B67 /* SectionModel.swift in Sources */,
 				8DAC5C1224C2B529007A8B67 /* loadXib.swift in Sources */,
 				8DAC5C3D24C536AA007A8B67 /* UIScrollView+Rx.swift in Sources */,
@@ -634,6 +694,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_URL = "https://www.wantedly.com/api/v1/projects";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -694,6 +755,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_URL = "https://www.wantedly.com/api/v1/projects";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -747,6 +809,7 @@
 		8DAC5B7624C1BA3C007A8B67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APIURL = "https://www.wantedly.com/api/v1/projects";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8V9298F7HL;
@@ -770,6 +833,7 @@
 		8DAC5B7724C1BA3C007A8B67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APIURL = "https://www.wantedly.com/api/v1/projects";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8V9298F7HL;

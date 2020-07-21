@@ -20,5 +20,10 @@ final class DIContainer: Assembly {
             .autoregister(RecruitmentServiceType.self,
                           initializer: RecruitmentService.init)
             .inObjectScope(.container)
+
+        container
+            .autoregister(RecruitmentStoreType.self,
+                          initializer: RecruitmentStore.init)
+            .inObjectScope(.container)
     }
 }

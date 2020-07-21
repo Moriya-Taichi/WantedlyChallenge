@@ -10,7 +10,7 @@ import SwinjectAutoregistration
 import Swinject
 import UIKit
 
-final class RecruitmentRouter: NavigationRouter, RecruitmentCreatable {
+final class RecruitmentRouter: NavigationRouter, RecruitmentPresentable {
 
     var navigationController: UINavigationController
     var container: Resolver
@@ -23,6 +23,7 @@ final class RecruitmentRouter: NavigationRouter, RecruitmentCreatable {
 
     func navigate() {
         let recruitmentViewController = createRecruitmentCatalog()
+        recruitmentViewController.router = self
         navigationController.viewControllers = [recruitmentViewController]
     }
 }

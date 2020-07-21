@@ -40,6 +40,11 @@ final class RecruitmentCatalogView: UIView {
         }
     }
 
+    private let selectedCellSubject = PublishSubject<Int>()
+    var selectedCellStream: Observable<Int> {
+        return selectedCellSubject
+    }
+
     var disposeBag = DisposeBag()
 
     required init?(coder: NSCoder) {
@@ -47,6 +52,7 @@ final class RecruitmentCatalogView: UIView {
         loadXib()
         setCollectionViewLayout()
         setupActivityIndicator()
+        setupRx()
     }
 
     override init(frame: CGRect) {
@@ -54,6 +60,7 @@ final class RecruitmentCatalogView: UIView {
         loadXib()
         setCollectionViewLayout()
         setupActivityIndicator()
+        setupRx()
     }
 
     private func setCollectionViewLayout() {
@@ -74,6 +81,20 @@ final class RecruitmentCatalogView: UIView {
             alpha: 1
         )
         addSubview(activityIndicator)
+    }
+
+    private func setupRx() {
+        collectionView.rx.itemSelected
+            .subscribe(onNext: {[weak self] indexPath in
+                guard
+                    case let .recruitmentCellItem(recruitment) = self?.reactor?.currentState.page.collection[indexPath.row]
+                    else
+                {
+                    return
+                }
+                self?.selectedCellSubject.onNext(recruitment.id)
+            })
+            .disposed(by: disposeBag)
     }
 }
 

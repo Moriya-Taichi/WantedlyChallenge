@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecruitmentCellView" customModule="WantedlyChallenge" customModuleProvider="target">
             <connections>
+                <outlet property="bookmarkButton" destination="JP1-HG-9s1" id="Bcc-BS-Zhx"/>
                 <outlet property="companyIconView" destination="BYU-ZN-Rah" id="m7L-Y1-5QD"/>
                 <outlet property="companyNameLabel" destination="HYq-kD-ZRN" id="Cqu-Zz-Apy"/>
                 <outlet property="lookingForLabel" destination="gKL-D6-kCm" id="QCm-Vh-u5h"/>

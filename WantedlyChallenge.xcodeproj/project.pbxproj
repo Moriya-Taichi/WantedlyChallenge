@@ -269,8 +269,6 @@
 		8DAC5BBF24C2730D007A8B67 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				8DAC5C6024C70713007A8B67 /* Recruitment */,
-				8DAC5C5024C696D3007A8B67 /* RecruitmentCatalog */,
 				8DAC5C0524C2972D007A8B67 /* CollectionViewCell */,
 				8DAC5C0424C29721007A8B67 /* View */,
 			);
@@ -349,6 +347,8 @@
 		8DAC5C0424C29721007A8B67 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C6024C70713007A8B67 /* Recruitment */,
+				8DAC5C5024C696D3007A8B67 /* RecruitmentCatalog */,
 				8DAC5C0624C29F91007A8B67 /* RecruitmentCellView */,
 			);
 			path = View;

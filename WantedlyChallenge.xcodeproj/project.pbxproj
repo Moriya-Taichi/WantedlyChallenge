@@ -58,6 +58,7 @@
 		8DAC5C5224C69C24007A8B67 /* RecruitmentCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C5124C69C24007A8B67 /* RecruitmentCatalogView.swift */; };
 		8DAC5C5424C69C3C007A8B67 /* RecruitmentCatalogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5C5324C69C3C007A8B67 /* RecruitmentCatalogView.xib */; };
 		8DAC5C5824C6A5B8007A8B67 /* RecruitmentCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C5724C6A5B8007A8B67 /* RecruitmentCatalogViewController.swift */; };
+		8DAC5C5A24C6B5C4007A8B67 /* RwcruitmentCellViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C5924C6B5C4007A8B67 /* RwcruitmentCellViewReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		8DAC5C5124C69C24007A8B67 /* RecruitmentCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentCatalogView.swift; sourceTree = "<group>"; };
 		8DAC5C5324C69C3C007A8B67 /* RecruitmentCatalogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecruitmentCatalogView.xib; sourceTree = "<group>"; };
 		8DAC5C5724C6A5B8007A8B67 /* RecruitmentCatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentCatalogViewController.swift; sourceTree = "<group>"; };
+		8DAC5C5924C6B5C4007A8B67 /* RwcruitmentCellViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RwcruitmentCellViewReactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,6 +354,7 @@
 			children = (
 				8DAC5C0724C2A130007A8B67 /* RecruitmentCellView.xib */,
 				8DAC5C0924C2A140007A8B67 /* RecruitmentCellView.swift */,
+				8DAC5C5924C6B5C4007A8B67 /* RwcruitmentCellViewReactor.swift */,
 			);
 			path = RecruitmentCellView;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				8DAC5C2E24C4303B007A8B67 /* WantedlyRequest.swift in Sources */,
 				8DAC5C2224C3FDEF007A8B67 /* Leader.swift in Sources */,
 				8DAC5B4F24C1BA3B007A8B67 /* AppDelegate.swift in Sources */,
+				8DAC5C5A24C6B5C4007A8B67 /* RwcruitmentCellViewReactor.swift in Sources */,
 				8DAC5C2024C3FDE8007A8B67 /* Image.swift in Sources */,
 				8DAC5C0A24C2A140007A8B67 /* RecruitmentCellView.swift in Sources */,
 				8DAC5C2A24C42D69007A8B67 /* Page.swift in Sources */,

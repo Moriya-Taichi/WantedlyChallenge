@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class RecrutingCollectionViewCell: UICollectionViewCell {
+final class RecruitmentCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet private weak var recrutingCellView: RecrutingCellView!
+    @IBOutlet private weak var recrutingCellView: RecruitmentCellView!
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -18,6 +18,6 @@ final class RecrutingCollectionViewCell: UICollectionViewCell {
     }
 
     func setCellContents(recruitment: Recruitment) {
-        recrutingCellView.setContents(recruitment: recruitment)
+        recrutingCellView.reactor = RecruitmentCellViewReactor(recruitment: recruitment)
     }
 }

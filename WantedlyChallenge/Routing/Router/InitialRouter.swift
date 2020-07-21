@@ -36,7 +36,7 @@ final class InitialRouter: Router {
     }
 
     func navigate() {
-        let recruitRouter = RecrutingRouter(container: container,
+        let recruitRouter = RecruitmentRouter(container: container,
                                             navigationController: .init())
         self.viewController = recruitRouter.viewController
         recruitRouter.navigate()

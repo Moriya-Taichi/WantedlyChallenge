@@ -10,7 +10,7 @@ import SwinjectAutoregistration
 import Swinject
 import UIKit
 
-final class RecrutingRouter: NavigationRouter, RecruitmentCreatable {
+final class RecruitmentRouter: NavigationRouter, RecruitmentCreatable {
 
     var navigationController: UINavigationController
     var container: Resolver

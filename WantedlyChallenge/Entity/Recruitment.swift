@@ -19,9 +19,9 @@ struct Recruitment: Codable, Hashable {
     let publishedAt: String
     let candidateCount: Int
     let pageView: Int
-    let location: String
-    let locationSuffix: String
+    let location: String?
+    let locationSuffix: String?
     let staffings: [Staff]
-    let leader: Leader
+    let leader: Leader?
     let company: Company
 }

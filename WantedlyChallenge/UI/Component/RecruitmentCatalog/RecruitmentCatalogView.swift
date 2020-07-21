@@ -21,6 +21,8 @@ final class RecruitmentCatalogView: UIView {
         }
     }
 
+    private let activityIndicator = UIActivityIndicatorView()
+
     private lazy var dataSource = CollectionViewDiffableDataSource<Section, CellItem>(
         collectionView: collectionView
         )
@@ -44,12 +46,14 @@ final class RecruitmentCatalogView: UIView {
         super.init(coder: coder)
         loadXib()
         setCollectionViewLayout()
+        setupActivityIndicator()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadXib()
         setCollectionViewLayout()
+        setupActivityIndicator()
     }
 
     private func setCollectionViewLayout() {
@@ -57,6 +61,19 @@ final class RecruitmentCatalogView: UIView {
         layout.itemSize = CGSize(width: self.frame.width * 0.95,
                                  height: self.frame.height / 3)
         collectionView.setCollectionViewLayout(layout, animated: true)
+    }
+
+    private func setupActivityIndicator() {
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.center = self.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = UIColor(
+            red: 17 / 255,
+            green: 146 / 255,
+            blue: 196 / 255,
+            alpha: 1
+        )
+        addSubview(activityIndicator)
     }
 }
 
@@ -91,6 +108,18 @@ extension RecruitmentCatalogView: StoryboardView {
                 snapshot.appendItems(page.collection, toSection: .recruitmentCatalog)
                 snapshot.reloadSections([.recruitmentCatalog])
                 self.dataSource.apply(snapshot, animatingDifferences: true)
+            })
+            .disposed(by: disposeBag)
+
+        reactor.state.map { $0.isLoading }
+            .distinctUntilChanged()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {[weak self] isLoading in
+                if isLoading {
+                    self?.activityIndicator.startAnimating()
+                } else {
+                    self?.activityIndicator.stopAnimating()
+                }
             })
             .disposed(by: disposeBag)
     }

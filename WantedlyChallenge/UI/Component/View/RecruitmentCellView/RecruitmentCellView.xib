@@ -65,11 +65,13 @@
                         </label>
                     </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-HG-9s1">
-                    <rect key="frame" x="405" y="16" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-HG-9s1">
+                    <rect key="frame" x="411" y="19" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="JP1-HG-9s1" secondAttribute="height" multiplier="1:1" id="jJB-TD-4me"/>
                     </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="BookmarkImage"/>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -94,4 +96,7 @@
             <point key="canvasLocation" x="142.75362318840581" y="385.37946428571428"/>
         </view>
     </objects>
+    <resources>
+        <image name="BookmarkImage" width="24" height="24"/>
+    </resources>
 </document>

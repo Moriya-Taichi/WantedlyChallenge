@@ -41,7 +41,7 @@ final class RecruitmentCellView: UIView {
         loadXib()
     }
 
-    func setContents(recruitment: Recruitment) {
+    private func setContents(recruitment: Recruitment) {
 
         titleLabel.text = recruitment.title
         lookingForLabel.text = recruitment.lookingFor
@@ -49,6 +49,29 @@ final class RecruitmentCellView: UIView {
 
         companyIconView.sd_setImage(with: URL(string: recruitment.company.avatar.original))
         recruitImageView.sd_setImage(with: URL(string: recruitment.image.original))
+        bookmarkButton.isSelected = recruitment.canBookmark
+    }
+
+    private func animateBookmark(isBookmark: Bool) {
+        if isBookmark {
+            UIView.animate(withDuration: 0.2,
+                           animations: {
+                            self.bookmarkButton.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+            }) { _ in
+                UIView.animate(withDuration: 0.1) {
+                    self.bookmarkButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                }
+            }
+        } else {
+            UIView.animate(withDuration: 0.2,
+                           animations: {
+                            self.bookmarkButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            }) { _ in
+                UIView.animate(withDuration: 0.1) {
+                    self.bookmarkButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                }
+            }
+        }
     }
 
 }
@@ -64,7 +87,22 @@ extension RecruitmentCellView: StoryboardView {
 
         reactor.state.map { $0.isBookmark }
             .distinctUntilChanged()
-            .bind(to: bookmarkButton.rx.isSelected)
+            .subscribe(onNext: { [weak self] isBookmark in
+                guard let self = self else {
+                    return
+                }
+                self.bookmarkButton.isSelected = isBookmark
+                if isBookmark {
+                    self.bookmarkButton.tintColor = UIColor(
+                        red: 17 / 255,
+                        green: 146 / 255,
+                        blue: 196 / 255,
+                        alpha: 1
+                    )
+                } else {
+                    self.bookmarkButton.tintColor = .white
+                }
+            })
             .disposed(by: disposeBag)
 
         bookmarkButton.rx.tap
@@ -72,6 +110,7 @@ extension RecruitmentCellView: StoryboardView {
                 guard let self = self else {
                     return
                 }
+                self.animateBookmark(isBookmark: self.bookmarkButton.isSelected)
                 if self.bookmarkButton.isSelected {
                     self.lightFeedbackgGenerator.prepare()
                     self.lightFeedbackgGenerator.impactOccurred()

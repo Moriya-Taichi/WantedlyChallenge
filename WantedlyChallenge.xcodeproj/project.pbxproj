@@ -34,8 +34,6 @@
 		8DAC5C0D24C2A167007A8B67 /* RecruitmentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5C0C24C2A167007A8B67 /* RecruitmentCollectionViewCell.xib */; };
 		8DAC5C0F24C2A1DE007A8B67 /* RecruitmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C0E24C2A1DE007A8B67 /* RecruitmentCollectionViewCell.swift */; };
 		8DAC5C1224C2B529007A8B67 /* loadXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1124C2B529007A8B67 /* loadXib.swift */; };
-		8DAC5C1624C2E35C007A8B67 /* RecruitmentCatalogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1524C2E35C007A8B67 /* RecruitmentCatalogView.xib */; };
-		8DAC5C1824C2E36F007A8B67 /* RecruitmentCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1724C2E36F007A8B67 /* RecruitmentCatalogViewController.swift */; };
 		8DAC5C1B24C2EDE2007A8B67 /* RecruitmentCatalogViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1A24C2EDE2007A8B67 /* RecruitmentCatalogViewReactor.swift */; };
 		8DAC5C1E24C3D714007A8B67 /* Recruitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1D24C3D714007A8B67 /* Recruitment.swift */; };
 		8DAC5C2024C3FDE8007A8B67 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1F24C3FDE8007A8B67 /* Image.swift */; };
@@ -57,6 +55,9 @@
 		8DAC5C4824C56277007A8B67 /* RecruitmentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C4724C56277007A8B67 /* RecruitmentRouter.swift */; };
 		8DAC5C4A24C57877007A8B67 /* InitialRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C4924C57877007A8B67 /* InitialRouter.swift */; };
 		8DAC5C4F24C5923A007A8B67 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C4E24C5923A007A8B67 /* Parser.swift */; };
+		8DAC5C5224C69C24007A8B67 /* RecruitmentCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C5124C69C24007A8B67 /* RecruitmentCatalogView.swift */; };
+		8DAC5C5424C69C3C007A8B67 /* RecruitmentCatalogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5C5324C69C3C007A8B67 /* RecruitmentCatalogView.xib */; };
+		8DAC5C5824C6A5B8007A8B67 /* RecruitmentCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C5724C6A5B8007A8B67 /* RecruitmentCatalogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,8 +114,6 @@
 		8DAC5C0C24C2A167007A8B67 /* RecruitmentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecruitmentCollectionViewCell.xib; sourceTree = "<group>"; };
 		8DAC5C0E24C2A1DE007A8B67 /* RecruitmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		8DAC5C1124C2B529007A8B67 /* loadXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadXib.swift; sourceTree = "<group>"; };
-		8DAC5C1524C2E35C007A8B67 /* RecruitmentCatalogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecruitmentCatalogView.xib; sourceTree = "<group>"; };
-		8DAC5C1724C2E36F007A8B67 /* RecruitmentCatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentCatalogViewController.swift; sourceTree = "<group>"; };
 		8DAC5C1A24C2EDE2007A8B67 /* RecruitmentCatalogViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentCatalogViewReactor.swift; sourceTree = "<group>"; };
 		8DAC5C1D24C3D714007A8B67 /* Recruitment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruitment.swift; sourceTree = "<group>"; };
 		8DAC5C1F24C3FDE8007A8B67 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -136,6 +135,9 @@
 		8DAC5C4724C56277007A8B67 /* RecruitmentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentRouter.swift; sourceTree = "<group>"; };
 		8DAC5C4924C57877007A8B67 /* InitialRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialRouter.swift; sourceTree = "<group>"; };
 		8DAC5C4E24C5923A007A8B67 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		8DAC5C5124C69C24007A8B67 /* RecruitmentCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentCatalogView.swift; sourceTree = "<group>"; };
+		8DAC5C5324C69C3C007A8B67 /* RecruitmentCatalogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecruitmentCatalogView.xib; sourceTree = "<group>"; };
+		8DAC5C5724C6A5B8007A8B67 /* RecruitmentCatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentCatalogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 		8DAC5BBF24C2730D007A8B67 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C5024C696D3007A8B67 /* RecruitmentCatalog */,
 				8DAC5C0524C2972D007A8B67 /* CollectionViewCell */,
 				8DAC5C0424C29721007A8B67 /* View */,
 			);
@@ -377,8 +380,7 @@
 		8DAC5C1324C2B673007A8B67 /* RecruitmentCatalog */ = {
 			isa = PBXGroup;
 			children = (
-				8DAC5C1524C2E35C007A8B67 /* RecruitmentCatalogView.xib */,
-				8DAC5C1724C2E36F007A8B67 /* RecruitmentCatalogViewController.swift */,
+				8DAC5C5724C6A5B8007A8B67 /* RecruitmentCatalogViewController.swift */,
 			);
 			path = RecruitmentCatalog;
 			sourceTree = "<group>";
@@ -458,6 +460,15 @@
 				8DAC5C4E24C5923A007A8B67 /* Parser.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		8DAC5C5024C696D3007A8B67 /* RecruitmentCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC5C5124C69C24007A8B67 /* RecruitmentCatalogView.swift */,
+				8DAC5C5324C69C3C007A8B67 /* RecruitmentCatalogView.xib */,
+			);
+			path = RecruitmentCatalog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,10 +577,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DAC5B5B24C1BA3C007A8B67 /* LaunchScreen.storyboard in Resources */,
+				8DAC5C5424C69C3C007A8B67 /* RecruitmentCatalogView.xib in Resources */,
 				8DAC5C0824C2A130007A8B67 /* RecruitmentCellView.xib in Resources */,
 				8DAC5C0D24C2A167007A8B67 /* RecruitmentCollectionViewCell.xib in Resources */,
 				8DAC5B5824C1BA3C007A8B67 /* Assets.xcassets in Resources */,
-				8DAC5C1624C2E35C007A8B67 /* RecruitmentCatalogView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,9 +643,10 @@
 				8DAC5C3524C50FF7007A8B67 /* CellItem.swift in Sources */,
 				8DAC5C2624C3FE6C007A8B67 /* Staff.swift in Sources */,
 				8DAC5C3B24C53699007A8B67 /* UIViewController+Rx.swift in Sources */,
+				8DAC5C5224C69C24007A8B67 /* RecruitmentCatalogView.swift in Sources */,
 				8DAC5C1E24C3D714007A8B67 /* Recruitment.swift in Sources */,
+				8DAC5C5824C6A5B8007A8B67 /* RecruitmentCatalogViewController.swift in Sources */,
 				8DAC5C2424C3FDFA007A8B67 /* Company.swift in Sources */,
-				8DAC5C1824C2E36F007A8B67 /* RecruitmentCatalogViewController.swift in Sources */,
 				8DAC5C3724C52C7F007A8B67 /* UICollectionView+CustomCellRegister.swift in Sources */,
 				8DAC5C4A24C57877007A8B67 /* InitialRouter.swift in Sources */,
 				8DAC5C1B24C2EDE2007A8B67 /* RecruitmentCatalogViewReactor.swift in Sources */,

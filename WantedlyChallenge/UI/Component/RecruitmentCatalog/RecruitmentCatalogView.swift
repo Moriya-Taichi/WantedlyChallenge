@@ -1,5 +1,5 @@
 //
-//  RecruitmentCatalogViewController.swift
+//  RecruitmentCatalogView.swift
 //  WantedlyChallenge
 //
 //  Created by Mori on 2020/07/21.

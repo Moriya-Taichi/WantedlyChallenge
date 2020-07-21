@@ -13,7 +13,7 @@ import UIKit
 final class RecruitmentViewController: UIViewController {
 
     private var recruitmentView: RecruitmentView?
-    var recruitmentViewReactor: RecruitmentViewReactor?
+    var reactor: RecruitmentViewReactor?
 
     override func loadView() {
         super.loadView()
@@ -25,7 +25,7 @@ final class RecruitmentViewController: UIViewController {
         guard let recruitmentView = recruitmentView else {
             return
         }
-        recruitmentView.reactor = recruitmentViewReactor
+        recruitmentView.reactor = reactor
         self.view.addSubview(recruitmentView)
     }
 }

@@ -27,9 +27,9 @@ final class RecruitmentViewReactor: Reactor {
     private let recruitmentId: Int
     private let recruitmentService: RecruitmentServiceType
 
-    init(recruitmentId: Int, recruitmentService: RecruitmentServiceType) {
+    init(id: Int, recruitmentService: RecruitmentServiceType) {
         initialState = State(recruitment: nil)
-        self.recruitmentId = recruitmentId
+        self.recruitmentId = id
         self.recruitmentService = recruitmentService
     }
 

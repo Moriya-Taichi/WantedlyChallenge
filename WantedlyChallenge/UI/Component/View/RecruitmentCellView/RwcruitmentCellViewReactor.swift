@@ -6,4 +6,46 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
-import Foundation
+import ReactorKit
+import RxSwift
+
+final class RecruitmentCellViewReactor: Reactor {
+
+    var initialState: State
+
+    enum Action {
+        case bookmark
+    }
+
+    enum Mutation {
+        case setIsBookmarked(Bool)
+    }
+
+    struct State {
+        var isBookmark: Bool
+        let recruitment: Recruitment
+    }
+
+    init(recruitment: Recruitment) {
+        initialState = State(isBookmark: recruitment.canBookmark,
+                             recruitment: recruitment)
+
+    }
+
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .bookmark:
+            //本来ならここで通信処理
+            return .just(.setIsBookmarked(!currentState.isBookmark))
+        }
+    }
+
+    func reduce(state: State, mutation: Mutation) -> State {
+        var newState = state
+        switch mutation {
+        case let .setIsBookmarked(isBookmark):
+            newState.isBookmark = isBookmark
+        }
+        return newState
+    }
+}

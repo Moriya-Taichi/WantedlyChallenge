@@ -18,6 +18,6 @@ final class RecruitmentCollectionViewCell: UICollectionViewCell {
     }
 
     func setCellContents(recruitment: Recruitment) {
-        recrutingCellView.setContents(recruitment: recruitment)
+        recrutingCellView.reactor = RecruitmentCellViewReactor(recruitment: recruitment)
     }
 }

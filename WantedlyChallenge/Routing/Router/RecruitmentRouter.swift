@@ -23,6 +23,7 @@ final class RecruitmentRouter: NavigationRouter, RecruitmentPresentable {
 
     func navigate() {
         let recruitmentViewController = createRecruitmentCatalog()
+        recruitmentViewController.router = self
         navigationController.viewControllers = [recruitmentViewController]
     }
 }

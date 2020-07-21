@@ -6,4 +6,19 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
-import Foundation
+import SwinjectAutoregistration
+import Swinject
+
+final class DIContainer: Assembly {
+    func assemble(container: Container) {
+        container
+            .autoregister(RecruitmentRepositoryType.self,
+                          initializer: RecruitmentRepository.init)
+            .inObjectScope(.container)
+
+        container
+            .autoregister(RecruitmentServiceType.self,
+                          initializer: RecruitmentService.init)
+            .inObjectScope(.container)
+    }
+}

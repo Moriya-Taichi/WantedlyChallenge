@@ -6,4 +6,26 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
-import Foundation
+import ReactorKit
+import RxSwift
+import UIKit
+
+final class RecruitmentViewController: UIViewController {
+
+    private var recruitmentView: RecruitmentView?
+    var recruitmentViewReactor: RecruitmentViewReactor?
+
+    override func loadView() {
+        super.loadView()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        recruitmentView = RecruitmentView(frame: self.view.bounds)
+        guard let recruitmentView = recruitmentView else {
+            return
+        }
+        recruitmentView.reactor = recruitmentViewReactor
+        self.view.addSubview(recruitmentView)
+    }
+}

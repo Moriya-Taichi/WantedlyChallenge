@@ -12,12 +12,12 @@ import RxOptional
 import RxSwift
 import UIKit
 
-final class RecrutingCatalogViewController: UIViewController {
+final class RecruitmentCatalogViewController: UIViewController {
 
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
-            collectionView.register(RecrutingCollectionViewCell.self)
+            collectionView.register(RecruitmentCollectionViewCell.self)
         }
     }
 
@@ -28,7 +28,7 @@ final class RecrutingCatalogViewController: UIViewController {
         switch item {
         case let .recruitmentCellItem(recruitment):
             guard
-                let cell = collectionView.dequeReusableCell(RecrutingCollectionViewCell.self,
+                let cell = collectionView.dequeReusableCell(RecruitmentCollectionViewCell.self,
                                                             indexPath: indexPath)
                 else {
                     return UICollectionViewCell()
@@ -52,7 +52,7 @@ final class RecrutingCatalogViewController: UIViewController {
     }
 }
 
-extension RecrutingCatalogViewController: StoryboardView {
+extension RecruitmentCatalogViewController: StoryboardView {
     func bind(reactor: RecrutingCatalogViewReactor) {
         Observable<Void>.just(())
             .map { _ in Reactor.Action.load }

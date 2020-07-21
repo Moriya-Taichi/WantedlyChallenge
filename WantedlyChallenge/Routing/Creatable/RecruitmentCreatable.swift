@@ -10,12 +10,12 @@ import SwinjectAutoregistration
 import Swinject
 
 protocol RecruitmentCreatable {
-    func createRecruitmentCatalog() -> RecrutingCatalogViewController
+    func createRecruitmentCatalog() -> RecruitmentCatalogViewController
 }
 
 extension RecruitmentCreatable where Self: NavigationRouter {
-    func createRecruitmentCatalog() -> RecrutingCatalogViewController {
-        let recruitmentViewController = RecrutingCatalogViewController()
+    func createRecruitmentCatalog() -> RecruitmentCatalogViewController {
+        let recruitmentViewController = RecruitmentCatalogViewController()
         recruitmentViewController.reactor = RecrutingCatalogViewReactor(recruitmentService: self.container~>)
         return recruitmentViewController
     }

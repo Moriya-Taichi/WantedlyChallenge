@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class RecrutingCollectionViewCell: UICollectionViewCell {
+final class RecruitmentCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet private weak var recrutingCellView: RecrutingCellView!
+    @IBOutlet private weak var recrutingCellView: RecruitmentCellView!
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)

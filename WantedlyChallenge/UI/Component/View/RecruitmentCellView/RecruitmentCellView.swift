@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-final class RecrutingCellView: UIView {
+final class RecruitmentCellView: UIView {
 
     @IBOutlet private weak var recruitImageView: UIImageView!
 

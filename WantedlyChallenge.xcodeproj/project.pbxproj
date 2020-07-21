@@ -64,6 +64,7 @@
 		8DAC5C6224C70735007A8B67 /* RecruitmenrView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAC5C6124C70735007A8B67 /* RecruitmenrView.xib */; };
 		8DAC5C6424C70808007A8B67 /* RecruitmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C6324C70808007A8B67 /* RecruitmentView.swift */; };
 		8DAC5C6724C70AAC007A8B67 /* RecruitmenrStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C6624C70AAC007A8B67 /* RecruitmenrStore.swift */; };
+		8DAC5C6924C7175C007A8B67 /* RecruitmentPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C6824C7175C007A8B67 /* RecruitmentPresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		8DAC5C6124C70735007A8B67 /* RecruitmenrView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecruitmenrView.xib; sourceTree = "<group>"; };
 		8DAC5C6324C70808007A8B67 /* RecruitmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentView.swift; sourceTree = "<group>"; };
 		8DAC5C6624C70AAC007A8B67 /* RecruitmenrStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmenrStore.swift; sourceTree = "<group>"; };
+		8DAC5C6824C7175C007A8B67 /* RecruitmentPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentPresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,6 +452,7 @@
 		8DAC5C4024C54C63007A8B67 /* Presentable */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC5C6824C7175C007A8B67 /* RecruitmentPresentable.swift */,
 			);
 			path = Presentable;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				8DAC5C4324C5507E007A8B67 /* Container.swift in Sources */,
 				8DAC5C4F24C5923A007A8B67 /* Parser.swift in Sources */,
 				8DAC5C3324C50FED007A8B67 /* SectionModel.swift in Sources */,
+				8DAC5C6924C7175C007A8B67 /* RecruitmentPresentable.swift in Sources */,
 				8DAC5C6424C70808007A8B67 /* RecruitmentView.swift in Sources */,
 				8DAC5C1224C2B529007A8B67 /* loadXib.swift in Sources */,
 				8DAC5C3D24C536AA007A8B67 /* UIScrollView+Rx.swift in Sources */,

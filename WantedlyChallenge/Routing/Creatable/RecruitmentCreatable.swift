@@ -6,4 +6,17 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
-import Foundation
+import SwinjectAutoregistration
+import Swinject
+
+protocol RecruitmentCreatable {
+    func createRecruitmentCatalog() -> RecrutingCatalogViewController
+}
+
+extension RecruitmentCreatable where Self: NavigationRouter {
+    func createRecruitmentCatalog() -> RecrutingCatalogViewController {
+        let recruitmentViewController = RecrutingCatalogViewController()
+        recruitmentViewController.reactor = RecrutingCatalogViewReactor(recruitmentService: self.container~>)
+        return recruitmentViewController
+    }
+}

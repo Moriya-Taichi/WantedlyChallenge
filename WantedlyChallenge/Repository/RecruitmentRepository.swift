@@ -22,8 +22,19 @@ struct RecruitmentRepository: RecruitmentRepositoryType {
 
     func fetchRecruitment(input: WantedlyRequestType)
         -> Single<[Recruitment]> {
-            provider.rx.request(input)
-                .map([Recruitment].self)
+            return provider.rx.request(input)
+                .map { response -> [Recruitment] in
+                    do {
+                        let jsonObject = try JSONSerialization.jsonObject(
+                            with: response.data,
+                            options: .fragmentsAllowed
+                            ) as? [String: Any]
+                        let recruitment = try parse([Recruitment].self, data: jsonObject?["data"])
+                        return recruitment
+                    } catch let error {
+                        throw error
+                    }
+            }
     }
 }
 

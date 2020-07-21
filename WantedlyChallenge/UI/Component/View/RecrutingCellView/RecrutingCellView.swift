@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class RecrutingCellView: UIView {
 
+    @IBOutlet private weak var recruitImageView: UIImageView!
+
+    @IBOutlet private weak var lookingForLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+
+    @IBOutlet private weak var companyIconView: UIImageView! {
+        didSet {
+            companyIconView.layer.cornerRadius = companyIconView.frame.width / 2
+        }
+    }
+    @IBOutlet private weak var companyNameLabel: UILabel!
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadXib()
@@ -19,4 +31,15 @@ final class RecrutingCellView: UIView {
         super.init(frame: frame)
         loadXib()
     }
+
+    func setContents(recruitment: Recruitment) {
+
+        titleLabel.text = recruitment.title
+        lookingForLabel.text = recruitment.lookingFor
+        companyNameLabel.text = recruitment.company.name
+
+        companyIconView.sd_setImage(with: URL(string: recruitment.company.avatar.original))
+        recruitImageView.sd_setImage(with: URL(string: recruitment.image.original))
+    }
+
 }

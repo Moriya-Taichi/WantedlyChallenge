@@ -14,6 +14,10 @@ final class RecrutingCollectionViewCell: UICollectionViewCell {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        self.layer.cornerRadius = 5
     }
-    
+
+    func setCellContents(recruitment: Recruitment) {
+        recrutingCellView.setContents(recruitment: recruitment)
+    }
 }

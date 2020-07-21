@@ -7,11 +7,13 @@
 //
 
 import ReactorKit
+import RxSwift
 import UIKit
 
 final class RecruitmentCatalogViewController: UIViewController {
 
     private var recruitmentCatalogView: RecruitmentCatalogView?
+    private let dispodseBag = DisposeBag()
     var reactor: RecruitmentCatalogViewReactor?
     weak var router: RecruitmentRouter?
 
@@ -29,6 +31,11 @@ final class RecruitmentCatalogViewController: UIViewController {
             return
         }
         recruitmentCatalogView.reactor = reactor
+        recruitmentCatalogView.selectedCellStream
+            .subscribe(onNext: { [weak self] id in
+                self?.router?.showRecruitment(id: id)
+            })
+            .disposed(by: dispodseBag)
         self.view.addSubview(recruitmentCatalogView)
     }
 

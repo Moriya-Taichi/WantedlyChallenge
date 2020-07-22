@@ -14,6 +14,7 @@ final class RecruitmentCatalogViewReactor: Reactor {
 
     enum Action {
         case load
+        case reload(String?)
         case search(String?)
         case paginate(String?)
     }
@@ -49,6 +50,13 @@ final class RecruitmentCatalogViewReactor: Reactor {
                 .map { $0.map(CellItem.recruitmentCellItem) }
                 .map(Mutation.setRecruitments)
             return .concat([startLoading, rectuitment, endLoading])
+        case let .reload(word):
+            if let word = word, word.isEmpty {
+                self.action.onNext(.load)
+            } else {
+                self.action.onNext(.search(word))
+            }
+            return .empty()
         case let .search(word):
             guard
                 let word = word,

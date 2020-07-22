@@ -13,14 +13,17 @@ final class RecruitmentViewReactor: Reactor {
 
     enum Action {
         case load
+        case bookmark
     }
 
     enum Mutation {
         case setRecruitment(Recruitment)
+        case setIsBookmark(Bool)
     }
 
     struct State {
         var recruitment: Recruitment?
+        var isBookmark: Bool
     }
 
     var initialState: State
@@ -28,7 +31,7 @@ final class RecruitmentViewReactor: Reactor {
     private let recruitmentService: RecruitmentServiceType
 
     init(id: Int, recruitmentService: RecruitmentServiceType) {
-        initialState = State(recruitment: nil)
+        initialState = State(recruitment: nil, isBookmark: false)
         self.recruitmentId = id
         self.recruitmentService = recruitmentService
     }
@@ -36,8 +39,14 @@ final class RecruitmentViewReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .load:
-            return recruitmentService.fetchRecruitment(id: recruitmentId)
-                .map(Mutation.setRecruitment)
+            let recruitment = recruitmentService.fetchRecruitment(id: recruitmentId)
+                .flatMap { recruitment -> Observable<Mutation> in
+                    return .concat([.just(.setRecruitment(recruitment)),
+                                    .just(.setIsBookmark(recruitment.canBookmark))])
+                }
+            return recruitment
+        case .bookmark:
+            return .just(.setIsBookmark(!currentState.isBookmark))
         }
     }
 
@@ -46,6 +55,8 @@ final class RecruitmentViewReactor: Reactor {
         switch mutation {
         case let .setRecruitment(recruitment):
             newState.recruitment = recruitment
+        case let .setIsBookmark(isBookamerk):
+            newState.isBookmark = isBookamerk
         }
         return newState
     }

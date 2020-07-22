@@ -14,12 +14,13 @@ import UIKit
 
 final class RecruitmentCatalogView: UIView {
 
-    @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
             collectionView.register(RecruitmentCollectionViewCell.self)
         }
     }
+
+    let refreshControl = UIRefreshControl()
 
     private let activityIndicator = UIActivityIndicatorView()
 
@@ -48,12 +49,15 @@ final class RecruitmentCatalogView: UIView {
     }
 
     var disposeBag = DisposeBag()
+    let searchController = UISearchController()
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadXib()
         setCollectionViewLayout()
         setupActivityIndicator()
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
     }
 
     override init(frame: CGRect) {
@@ -61,6 +65,7 @@ final class RecruitmentCatalogView: UIView {
         loadXib()
         setCollectionViewLayout()
         setupActivityIndicator()
+        searchController.obscuresBackgroundDuringPresentation = false
     }
 
     private func setCollectionViewLayout() {
@@ -68,6 +73,7 @@ final class RecruitmentCatalogView: UIView {
         layout.itemSize = CGSize(width: self.frame.width * 0.95,
                                  height: self.frame.height / 3)
         collectionView.setCollectionViewLayout(layout, animated: true)
+        collectionView.refreshControl = refreshControl
     }
 
     private func setupActivityIndicator() {
@@ -91,15 +97,20 @@ extension RecruitmentCatalogView: StoryboardView {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
 
-        searchBar.rx.text
+        refreshControl.rx.controlEvent(.valueChanged)
+            .map { [weak self] _ in Reactor.Action.reload(self?.searchController.searchBar.text) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+
+        searchController.searchBar.rx.text
             .distinctUntilChanged()
-            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
+            .debounce(.milliseconds(100), scheduler: MainScheduler.instance)
             .map(Reactor.Action.search)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
 
         collectionView.rx.isReachedBottom
-            .map { [weak self] _ in self?.searchBar.text }
+            .map { [weak self] _ in self?.searchController.searchBar.text }
             .map(Reactor.Action.paginate)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
@@ -138,8 +149,20 @@ extension RecruitmentCatalogView: StoryboardView {
                     self?.activityIndicator.startAnimating()
                 } else {
                     self?.activityIndicator.stopAnimating()
+                    self?.refreshControl.endRefreshing()
                 }
             })
             .disposed(by: disposeBag)
+    }
+}
+
+extension RecruitmentCatalogView: UISearchBarDelegate {
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.endEditing(true)
+        return true
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
     }
 }

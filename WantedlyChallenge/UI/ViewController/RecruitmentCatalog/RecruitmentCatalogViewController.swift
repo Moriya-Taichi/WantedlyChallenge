@@ -15,7 +15,7 @@ final class RecruitmentCatalogViewController: UIViewController {
     private var recruitmentCatalogView: RecruitmentCatalogView?
     private let dispodseBag = DisposeBag()
     var reactor: RecruitmentCatalogViewReactor?
-    weak var router: RecruitmentRouter?
+    var router: RecruitmentPresentable?
 
     override func loadView() {
         super.loadView()

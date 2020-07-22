@@ -14,6 +14,8 @@ final class RecruitmentViewController: UIViewController {
 
     private var recruitmentView: RecruitmentView?
     var reactor: RecruitmentViewReactor?
+    var router: RecruitmentPresentable?
+    let disposeBag = DisposeBag()
 
     override func loadView() {
         super.loadView()
@@ -27,5 +29,11 @@ final class RecruitmentViewController: UIViewController {
         }
         recruitmentView.reactor = reactor
         self.view.addSubview(recruitmentView)
+        self.navigationController?.navigationBar.isHidden = true
+        recruitmentView.transactionEventStream
+            .subscribe(onNext: {[weak self] _ in
+                self?.router?.back()
+            })
+            .disposed(by: disposeBag)
     }
 }

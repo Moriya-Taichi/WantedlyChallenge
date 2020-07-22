@@ -37,6 +37,8 @@ final class RecruitmentCatalogView: UIView {
             }
             cell.setCellContents(recruitment: recruitment)
             return cell
+        default:
+            return UICollectionViewCell()
         }
     }
 

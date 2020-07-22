@@ -65,6 +65,7 @@
 		8DAC5C6424C70808007A8B67 /* RecruitmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C6324C70808007A8B67 /* RecruitmentView.swift */; };
 		8DAC5C6724C70AAC007A8B67 /* RecruitmenrStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C6624C70AAC007A8B67 /* RecruitmenrStore.swift */; };
 		8DAC5C6924C7175C007A8B67 /* RecruitmentPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C6824C7175C007A8B67 /* RecruitmentPresentable.swift */; };
+		8DEC984624C87CFE00D4EF20 /* RecruitmentStaffCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEC984524C87CFE00D4EF20 /* RecruitmentStaffCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,7 @@
 		8DAC5C6324C70808007A8B67 /* RecruitmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentView.swift; sourceTree = "<group>"; };
 		8DAC5C6624C70AAC007A8B67 /* RecruitmenrStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmenrStore.swift; sourceTree = "<group>"; };
 		8DAC5C6824C7175C007A8B67 /* RecruitmentPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentPresentable.swift; sourceTree = "<group>"; };
+		8DEC984524C87CFE00D4EF20 /* RecruitmentStaffCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentStaffCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,6 +361,7 @@
 		8DAC5C0524C2972D007A8B67 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				8DEC984424C87CE200D4EF20 /* RecruitmentStaff */,
 				8DAC5C0B24C2A14D007A8B67 /* RecruitmentCell */,
 			);
 			path = CollectionViewCell;
@@ -514,6 +517,14 @@
 				8DAC5C6624C70AAC007A8B67 /* RecruitmenrStore.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		8DEC984424C87CE200D4EF20 /* RecruitmentStaff */ = {
+			isa = PBXGroup;
+			children = (
+				8DEC984524C87CFE00D4EF20 /* RecruitmentStaffCollectionViewCell.swift */,
+			);
+			path = RecruitmentStaff;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -679,6 +690,7 @@
 				8DAC5B4F24C1BA3B007A8B67 /* AppDelegate.swift in Sources */,
 				8DAC5C5A24C6B5C4007A8B67 /* RwcruitmentCellViewReactor.swift in Sources */,
 				8DAC5C2024C3FDE8007A8B67 /* Image.swift in Sources */,
+				8DEC984624C87CFE00D4EF20 /* RecruitmentStaffCollectionViewCell.swift in Sources */,
 				8DAC5C0A24C2A140007A8B67 /* RecruitmentCellView.swift in Sources */,
 				8DAC5C2A24C42D69007A8B67 /* Page.swift in Sources */,
 				8DAC5C3024C500BF007A8B67 /* RecruitmentService.swift in Sources */,

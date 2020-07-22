@@ -10,11 +10,17 @@ import Foundation
 
 protocol RecruitmentPresentable: RecruitmentCreatable {
     func showRecruitment(id: Int)
+    func back()
 }
 
 extension RecruitmentPresentable where Self: NavigationRouter {
     func showRecruitment(id: Int) {
         let recruitmentViewController = createRecruitment(id: id)
+        recruitmentViewController.router = self
         self.navigationController.pushViewController(recruitmentViewController, animated: true)
+    }
+
+    func back() {
+        self.navigationController.popViewController(animated: true)
     }
 }

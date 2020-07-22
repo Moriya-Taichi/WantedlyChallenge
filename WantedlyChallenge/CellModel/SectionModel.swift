@@ -8,4 +8,5 @@
 
 enum Section {
     case recruitmentCatalog
+    case recruitmentStaff
 }

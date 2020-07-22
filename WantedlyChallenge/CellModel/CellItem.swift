@@ -10,4 +10,5 @@ import DiffableDataSources
 
 enum CellItem: Hashable {
     case recruitmentCellItem(Recruitment)
+    case staffCellItem(Staff)
 }

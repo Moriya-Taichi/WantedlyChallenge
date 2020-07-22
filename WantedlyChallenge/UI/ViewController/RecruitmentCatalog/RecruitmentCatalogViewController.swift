@@ -15,7 +15,7 @@ final class RecruitmentCatalogViewController: UIViewController {
     private var recruitmentCatalogView: RecruitmentCatalogView?
     private let dispodseBag = DisposeBag()
     var reactor: RecruitmentCatalogViewReactor?
-    weak var router: RecruitmentRouter?
+    var router: RecruitmentPresentable?
 
     override func loadView() {
         super.loadView()
@@ -45,5 +45,6 @@ final class RecruitmentCatalogViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        self.navigationController?.navigationBar.isHidden = false
     }
 }

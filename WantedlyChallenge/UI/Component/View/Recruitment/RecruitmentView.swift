@@ -171,6 +171,20 @@ extension RecruitmentView: StoryboardView {
             })
             .disposed(by: disposeBag)
 
+        reactor.state.map { $0.displayStaff }
+            .distinctUntilChanged()
+            .filterNil()
+            .subscribe(onNext: {[weak self] staff in
+                self?.staffNameLabel.text = staff.name
+                self?.staffDescriptionLabel.text = staff.description
+            })
+            .disposed(by: disposeBag)
+
+        staffCollectionView.rx.itemSelected
+            .map{ Reactor.Action.selectStaff($0.row) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+
         bookmarkButton.rx.tap
             .do(onNext: {[weak self] _ in
                 guard let self = self else {

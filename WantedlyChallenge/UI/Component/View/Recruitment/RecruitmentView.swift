@@ -28,7 +28,7 @@ final class RecruitmentView: UIView {
             applicationButoton.layer.cornerRadius = applicationButoton.frame.height / 2
         }
     }
-    @IBOutlet weak var headerImageView: UIImageView!
+    @IBOutlet private weak var headerImageView: UIImageView!
     @IBOutlet private weak var lookingForLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var companyIconImageView: UIImageView! {
@@ -57,8 +57,8 @@ final class RecruitmentView: UIView {
     var transactionEventStream: Observable<Void> {
         return transactionEventSubject
     }
-    let mediumFeedBackGenerator = UIImpactFeedbackGenerator(style: .medium)
-    let lightFeedbackgGenerator = UIImpactFeedbackGenerator(style: .light)
+    private let mediumFeedBackGenerator = UIImpactFeedbackGenerator(style: .medium)
+    private let lightFeedbackgGenerator = UIImpactFeedbackGenerator(style: .light)
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
+import DiffableDataSources
 import ReactorKit
 import RxSwift
 import UIKit
@@ -16,7 +17,14 @@ final class RecruitmentView: UIView {
     @IBOutlet private weak var navigationView: UIView!
     @IBOutlet private weak var headerView: UIView!
     @IBOutlet private weak var headerHeightConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.contentInset = UIEdgeInsets(top: 0,
+                                                   left: 0,
+                                                   bottom: scrollView.frame.height / 3,
+                                                   right: 0)
+        }
+    }
     @IBOutlet private weak var backButton: UIButton! {
         didSet {
             backButton.layer.cornerRadius = backButton.frame.width / 2
@@ -43,7 +51,12 @@ final class RecruitmentView: UIView {
     @IBOutlet private weak var missionLabel: UILabel!
     @IBOutlet private weak var approachLabel: UILabel!
 
-    @IBOutlet private weak var staffCollectionView: UICollectionView!
+    @IBOutlet private weak var staffCollectionView: UICollectionView! {
+        didSet {
+            staffCollectionView.register(RecruitmentStaffCollectionViewCell.self,
+                                         forCellWithReuseIdentifier: "RecruitmentStaffCollectionViewCell")
+        }
+    }
     @IBOutlet private weak var staffNameLabel: UILabel!
     @IBOutlet private weak var staffDescriptionLabel: UILabel!
 
@@ -59,10 +72,28 @@ final class RecruitmentView: UIView {
     }
     private let mediumFeedBackGenerator = UIImpactFeedbackGenerator(style: .medium)
     private let lightFeedbackgGenerator = UIImpactFeedbackGenerator(style: .light)
-
+    private lazy var dataSource = CollectionViewDiffableDataSource<Section, CellItem>(
+        collectionView: staffCollectionView
+        )
+    { collectionView, indexPath, item -> UICollectionViewCell? in
+        switch item {
+        case let .staffCellItem(staff):
+            guard
+                let cell = collectionView.dequeReusableCell(RecruitmentStaffCollectionViewCell.self,
+                                                            indexPath: indexPath)
+                else {
+                    return UICollectionViewCell()
+            }
+            cell.setCellContents(staff: staff)
+            return cell
+        default:
+            return UICollectionViewCell()
+        }
+    }
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadXib()
+        setupStaffCollectionView()
         navigationView.alpha = 0.0
         safeAreaView.alpha = 0.0
     }
@@ -70,8 +101,19 @@ final class RecruitmentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadXib()
+        setupStaffCollectionView()
         navigationView.alpha = 0.0
         safeAreaView.alpha = 0.0
+    }
+
+    private func setupStaffCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 15
+        layout.sectionInset = .init(top: 0, left: 15, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: staffCollectionView.frame.height,
+                                 height: staffCollectionView.frame.height)
+        staffCollectionView.setCollectionViewLayout(layout, animated: true)
     }
 
     private func setContents(recruitment: Recruitment?) {
@@ -82,7 +124,12 @@ final class RecruitmentView: UIView {
         titleLabel.text = recruitment.title
         lookingForLabel.text = recruitment.lookingFor
         descriptionLabel.text = recruitment.description
-        
+        var snapshot = DiffableDataSourceSnapshot<Section, CellItem>()
+        snapshot.appendSections([.recruitmentStaff])
+        snapshot.appendItems(recruitment.staffings.map(CellItem.staffCellItem),
+                             toSection: .recruitmentStaff)
+        dataSource.apply(snapshot)
+
     }
 }
 

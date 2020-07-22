@@ -28,7 +28,7 @@ final class RecruitmentCatalogViewController: UIViewController {
             let recruitmentCatalogView = recruitmentCatalogView,
             let reactor = reactor
             else {
-            return
+                return
         }
         recruitmentCatalogView.reactor = reactor
         recruitmentCatalogView.selectedCellStream
@@ -36,15 +36,26 @@ final class RecruitmentCatalogViewController: UIViewController {
                 self?.router?.showRecruitment(id: id)
             })
             .disposed(by: dispodseBag)
+        self.navigationItem.searchController = recruitmentCatalogView.searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
         self.view.addSubview(recruitmentCatalogView)
+        recruitmentCatalogView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        recruitmentCatalogView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        recruitmentCatalogView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        recruitmentCatalogView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.title = "募集"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-        self.navigationController?.navigationBar.isHidden = false
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.window?.endEditing(true)
     }
 }

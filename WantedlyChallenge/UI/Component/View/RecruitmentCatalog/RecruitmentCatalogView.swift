@@ -52,7 +52,6 @@ final class RecruitmentCatalogView: UIView {
         loadXib()
         setCollectionViewLayout()
         setupActivityIndicator()
-        setupRx()
     }
 
     override init(frame: CGRect) {
@@ -60,7 +59,6 @@ final class RecruitmentCatalogView: UIView {
         loadXib()
         setCollectionViewLayout()
         setupActivityIndicator()
-        setupRx()
     }
 
     private func setCollectionViewLayout() {
@@ -82,20 +80,6 @@ final class RecruitmentCatalogView: UIView {
         )
         addSubview(activityIndicator)
     }
-
-    private func setupRx() {
-        collectionView.rx.itemSelected
-            .subscribe(onNext: {[weak self] indexPath in
-                guard
-                    case let .recruitmentCellItem(recruitment) = self?.reactor?.currentState.page.collection[indexPath.row]
-                    else
-                {
-                    return
-                }
-                self?.selectedCellSubject.onNext(recruitment.id)
-            })
-            .disposed(by: disposeBag)
-    }
 }
 
 extension RecruitmentCatalogView: StoryboardView {
@@ -116,6 +100,18 @@ extension RecruitmentCatalogView: StoryboardView {
             .map { [weak self] _ in self?.searchBar.text }
             .map(Reactor.Action.paginate)
             .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+
+        collectionView.rx.itemSelected
+            .subscribe(onNext: {[weak self] indexPath in
+                guard
+                    case let .recruitmentCellItem(recruitment) = self?.reactor?.currentState.page.collection[indexPath.row]
+                    else
+                {
+                    return
+                }
+                self?.selectedCellSubject.onNext(recruitment.id)
+            })
             .disposed(by: disposeBag)
 
         reactor.state.map { $0.page }

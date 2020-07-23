@@ -16,7 +16,7 @@ extension Reactive where Base: UIScrollView {
             .filter { [weak base] offset -> Bool in
                 guard let base = base else { return false }
                 let offsetToBottom = base.contentOffset.y + base.bounds.height
-                return offsetToBottom >= base.contentSize.height - base.bounds.height / 3
+                return offsetToBottom >= base.contentSize.height - base.bounds.height / 2
             }
             .map { _ in Void() }
         return source

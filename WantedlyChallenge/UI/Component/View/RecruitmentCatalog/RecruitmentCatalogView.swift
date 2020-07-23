@@ -136,14 +136,12 @@ extension RecruitmentCatalogView: StoryboardView {
                 var snapshot = DiffableDataSourceSnapshot<Section, CellItem>()
                 snapshot.appendSections([.recruitmentCatalog])
                 snapshot.appendItems(page.collection, toSection: .recruitmentCatalog)
-                snapshot.reloadSections([.recruitmentCatalog])
                 self.dataSource.apply(snapshot, animatingDifferences: true)
             })
             .disposed(by: disposeBag)
 
         reactor.state.map { $0.isLoading }
             .distinctUntilChanged()
-            .observeOn(MainScheduler.instance)
             .subscribe(onNext: {[weak self] isLoading in
                 if isLoading {
                     self?.activityIndicator.startAnimating()

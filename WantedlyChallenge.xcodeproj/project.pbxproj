@@ -36,7 +36,7 @@
 		8DAC5C1224C2B529007A8B67 /* loadXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1124C2B529007A8B67 /* loadXib.swift */; };
 		8DAC5C1B24C2EDE2007A8B67 /* RecruitmentCatalogViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1A24C2EDE2007A8B67 /* RecruitmentCatalogViewReactor.swift */; };
 		8DAC5C1E24C3D714007A8B67 /* Recruitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1D24C3D714007A8B67 /* Recruitment.swift */; };
-		8DAC5C2024C3FDE8007A8B67 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1F24C3FDE8007A8B67 /* Image.swift */; };
+		8DAC5C2024C3FDE8007A8B67 /* CompanyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C1F24C3FDE8007A8B67 /* CompanyImage.swift */; };
 		8DAC5C2224C3FDEF007A8B67 /* Leader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2124C3FDEF007A8B67 /* Leader.swift */; };
 		8DAC5C2424C3FDFA007A8B67 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2324C3FDFA007A8B67 /* Company.swift */; };
 		8DAC5C2624C3FE6C007A8B67 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C2524C3FE6C007A8B67 /* Staff.swift */; };
@@ -66,6 +66,7 @@
 		8DAC5C6724C70AAC007A8B67 /* RecruitmenrStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C6624C70AAC007A8B67 /* RecruitmenrStore.swift */; };
 		8DAC5C6924C7175C007A8B67 /* RecruitmentPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C6824C7175C007A8B67 /* RecruitmentPresentable.swift */; };
 		8DEC984624C87CFE00D4EF20 /* RecruitmentStaffCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEC984524C87CFE00D4EF20 /* RecruitmentStaffCollectionViewCell.swift */; };
+		8DEC984824C9212800D4EF20 /* RecruitmentImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEC984724C9212800D4EF20 /* RecruitmentImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,7 +125,7 @@
 		8DAC5C1124C2B529007A8B67 /* loadXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadXib.swift; sourceTree = "<group>"; };
 		8DAC5C1A24C2EDE2007A8B67 /* RecruitmentCatalogViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentCatalogViewReactor.swift; sourceTree = "<group>"; };
 		8DAC5C1D24C3D714007A8B67 /* Recruitment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruitment.swift; sourceTree = "<group>"; };
-		8DAC5C1F24C3FDE8007A8B67 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		8DAC5C1F24C3FDE8007A8B67 /* CompanyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyImage.swift; sourceTree = "<group>"; };
 		8DAC5C2124C3FDEF007A8B67 /* Leader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leader.swift; sourceTree = "<group>"; };
 		8DAC5C2324C3FDFA007A8B67 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		8DAC5C2524C3FE6C007A8B67 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
@@ -154,6 +155,7 @@
 		8DAC5C6624C70AAC007A8B67 /* RecruitmenrStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmenrStore.swift; sourceTree = "<group>"; };
 		8DAC5C6824C7175C007A8B67 /* RecruitmentPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentPresentable.swift; sourceTree = "<group>"; };
 		8DEC984524C87CFE00D4EF20 /* RecruitmentStaffCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentStaffCollectionViewCell.swift; sourceTree = "<group>"; };
+		8DEC984724C9212800D4EF20 /* RecruitmentImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,11 +428,12 @@
 			isa = PBXGroup;
 			children = (
 				8DAC5C1D24C3D714007A8B67 /* Recruitment.swift */,
-				8DAC5C1F24C3FDE8007A8B67 /* Image.swift */,
+				8DAC5C1F24C3FDE8007A8B67 /* CompanyImage.swift */,
 				8DAC5C2124C3FDEF007A8B67 /* Leader.swift */,
 				8DAC5C2324C3FDFA007A8B67 /* Company.swift */,
 				8DAC5C2524C3FE6C007A8B67 /* Staff.swift */,
 				8DAC5C2924C42D69007A8B67 /* Page.swift */,
+				8DEC984724C9212800D4EF20 /* RecruitmentImage.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -689,7 +692,7 @@
 				8DAC5C2224C3FDEF007A8B67 /* Leader.swift in Sources */,
 				8DAC5B4F24C1BA3B007A8B67 /* AppDelegate.swift in Sources */,
 				8DAC5C5A24C6B5C4007A8B67 /* RwcruitmentCellViewReactor.swift in Sources */,
-				8DAC5C2024C3FDE8007A8B67 /* Image.swift in Sources */,
+				8DAC5C2024C3FDE8007A8B67 /* CompanyImage.swift in Sources */,
 				8DEC984624C87CFE00D4EF20 /* RecruitmentStaffCollectionViewCell.swift in Sources */,
 				8DAC5C0A24C2A140007A8B67 /* RecruitmentCellView.swift in Sources */,
 				8DAC5C2A24C42D69007A8B67 /* Page.swift in Sources */,
@@ -712,6 +715,7 @@
 				8DAC5C4A24C57877007A8B67 /* InitialRouter.swift in Sources */,
 				8DAC5C1B24C2EDE2007A8B67 /* RecruitmentCatalogViewReactor.swift in Sources */,
 				8DAC5C4524C56255007A8B67 /* RecruitmentCreatable.swift in Sources */,
+				8DEC984824C9212800D4EF20 /* RecruitmentImage.swift in Sources */,
 				8DAC5C5F24C70707007A8B67 /* RecruitmentViewController.swift in Sources */,
 				8DAC5C4324C5507E007A8B67 /* Container.swift in Sources */,
 				8DAC5C4F24C5923A007A8B67 /* Parser.swift in Sources */,

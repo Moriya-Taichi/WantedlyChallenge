@@ -29,7 +29,6 @@ final class RecruitmentViewController: UIViewController {
         }
         recruitmentView.reactor = reactor
         self.view.addSubview(recruitmentView)
-        self.navigationController?.navigationBar.isHidden = true
         recruitmentView.transitionEventStream
             .subscribe(onNext: {[weak self] event in
                 switch event {
@@ -42,5 +41,10 @@ final class RecruitmentViewController: UIViewController {
                 }
             })
             .disposed(by: disposeBag)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
 }

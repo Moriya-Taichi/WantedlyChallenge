@@ -51,8 +51,18 @@ final class RecruitmentCatalogViewController: UIViewController {
         self.navigationItem.title = "募集"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.barTintColor = .white
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithDefaultBackground()
+            appearance.backgroundColor = UIColor(named: "systemWhite")
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.label]
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.label]
+            self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+            self.navigationController?.navigationBar.standardAppearance = appearance
+        } else {
+            self.navigationController?.navigationBar.barTintColor = UIColor(named: "systemWhite")
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor(named: "systemBlack")]
+        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

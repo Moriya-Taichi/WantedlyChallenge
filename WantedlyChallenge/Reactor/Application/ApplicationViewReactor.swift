@@ -13,13 +13,16 @@ final class ApplicationViewReactor: Reactor {
 
     enum Action {
         case selectChoice(Int)
+        case applicate
     }
 
     enum Mutation {
         case setChoice(String)
+        case setIsSucceed(Bool)
     }
 
     struct State {
+        var isSucceed: Bool
         var choices: [String]
         var selectedChoice: String?
         var isSelected: Bool {
@@ -34,7 +37,7 @@ final class ApplicationViewReactor: Reactor {
                            "少しだけ興味があります"]
 
     init(id: Int) {
-        initialState = State(choices: choices ,selectedChoice: nil)
+        initialState = State(isSucceed: false, choices: choices ,selectedChoice: nil)
         recruitmentId = id
     }
 
@@ -43,6 +46,9 @@ final class ApplicationViewReactor: Reactor {
         case let .selectChoice(index):
             guard index < currentState.choices.count else { return .empty() }
             return .just(.setChoice(currentState.choices[index]))
+        case .applicate:
+            //本来はここで通信
+            return .just(.setIsSucceed(true))
         }
     }
 
@@ -51,6 +57,8 @@ final class ApplicationViewReactor: Reactor {
         switch mutation {
         case let .setChoice(choice):
             newState.selectedChoice = choice
+        case let .setIsSucceed(isSucceed):
+            newState.isSucceed = isSucceed
         }
         return newState
     }

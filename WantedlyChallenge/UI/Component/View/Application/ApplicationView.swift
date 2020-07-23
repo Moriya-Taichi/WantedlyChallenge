@@ -12,10 +12,16 @@ import UIKit
 
 final class ApplicationView: UIView {
 
-    @IBOutlet private weak var choicesTableView: UITableView!
+    @IBOutlet private weak var choicesTableView: UITableView! {
+        didSet {
+            choicesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        }
+    }
     @IBOutlet private weak var applicateButton: UIButton! {
         didSet {
             applicateButton.layer.cornerRadius = applicateButton.frame.height / 2
+            applicateButton.setTitleColor(.white, for: .normal)
+            applicateButton.setTitleColor(.lightGray, for: .disabled)
         }
     }
     @IBOutlet private weak var backgroundButton: UIButton!
@@ -40,9 +46,48 @@ final class ApplicationView: UIView {
 
 extension ApplicationView: StoryboardView {
     func bind(reactor: ApplicationViewReactor) {
+        choicesTableView.rx.itemSelected
+            .do(onNext: {[weak self] indexPath in
+                guard
+                    let self = self,
+                    let cell = self.choicesTableView.cellForRow(at: indexPath)
+                    else {
+                        return
+                }
+                cell.accessoryType = .checkmark
+            })
+            .map { Reactor.Action.selectChoice($0.row) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+
+        choicesTableView.rx.itemDeselected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard
+                    let self = self,
+                    let cell = self.choicesTableView.cellForRow(at: indexPath)
+                    else {
+                        return
+                }
+                cell.accessoryType = .none
+            })
+            .disposed(by: disposeBag)
+
         backgroundButton.rx.tap
             .map { _ in TransitionEvent.dismiss }
             .bind(to: transitionEventSubject)
+            .disposed(by: disposeBag)
+
+        reactor.state.map { $0.choices }
+            .distinctUntilChanged()
+            .bind(to: choicesTableView.rx.items(cellIdentifier: "Cell")) { row, item, cell in
+                cell.textLabel?.text = item
+                cell.selectionStyle = .none
+            }
+            .disposed(by: disposeBag)
+
+        reactor.state.map { $0.isSelected }
+            .distinctUntilChanged()
+            .bind(to: applicateButton.rx.isEnabled)
             .disposed(by: disposeBag)
     }
 }

@@ -69,6 +69,13 @@ final class RecruitmentCatalogViewReactor: Reactor {
                                   page: 0)
                 .map { $0.map(CellItem.recruitmentCellItem) }
                 .map(Mutation.setRecruitments)
+                .takeUntil(self.action.filter {
+                    if case .search = $0 {
+                        return true
+                    } else {
+                        return false
+                    }
+                })
             return .concat([startLoading, serchedRecruitments, endLoading])
         case let .paginate(word):
             guard
@@ -83,13 +90,6 @@ final class RecruitmentCatalogViewReactor: Reactor {
                     .map { $0.map(CellItem.recruitmentCellItem) }
                     .map { self.currentState.page.paginate($0) }
                     .map(Mutation.setRecruitments)
-                    .takeUntil(self.action.filter {
-                        if case .search = $0 {
-                            return true
-                        } else {
-                            return false
-                        }
-                    })
                 return .concat([startLoading, recruitmentPagination, endLoading])
             }
             let serchPagenation = recruitmentService
@@ -98,13 +98,6 @@ final class RecruitmentCatalogViewReactor: Reactor {
                 .map { $0.map(CellItem.recruitmentCellItem) }
                 .map { self.currentState.page.paginate($0) }
                 .map(Mutation.setRecruitments)
-                .takeUntil(self.action.filter {
-                    if case .search = $0 {
-                        return true
-                    } else {
-                        return false
-                    }
-                })
             return .concat([startLoading, serchPagenation, endLoading])
         }
     }

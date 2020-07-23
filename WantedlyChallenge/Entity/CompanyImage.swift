@@ -8,6 +8,7 @@
 
 import Foundation
 
-struct Image: Codable, Hashable {
+struct CompanyImage: Codable, Hashable {
     let original: String
+    let s50: String
 }

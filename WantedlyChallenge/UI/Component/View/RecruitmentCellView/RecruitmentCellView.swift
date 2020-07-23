@@ -47,8 +47,8 @@ final class RecruitmentCellView: UIView {
         lookingForLabel.text = recruitment.lookingFor
         companyNameLabel.text = recruitment.company.name
 
-        companyIconView.sd_setImage(with: URL(string: recruitment.company.avatar.original))
-        recruitImageView.sd_setImage(with: URL(string: recruitment.image.original))
+        companyIconView.sd_setImage(with: URL(string: recruitment.company.avatar.s50))
+        recruitImageView.sd_setImage(with: URL(string: recruitment.image.i320131X2))
         bookmarkButton.isSelected = recruitment.canBookmark
     }
 

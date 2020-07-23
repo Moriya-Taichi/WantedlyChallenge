@@ -9,10 +9,13 @@
 import Foundation
 
 struct Recruitment: Codable, Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
     let id: Int
     let title: String
     let description: String
-    let image: Image
+    let image: RecruitmentImage
     let canSupport: Bool
     let canBookmark: Bool
     let lookingFor: String

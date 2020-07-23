@@ -19,5 +19,5 @@ struct Company: Codable, Hashable {
     let longitude: Double?
     let url: String
     let fontColorCode: String
-    let avatar: Image
+    let avatar: CompanyImage
 }

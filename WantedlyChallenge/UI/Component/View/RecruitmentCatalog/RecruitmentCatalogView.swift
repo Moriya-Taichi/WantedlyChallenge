@@ -104,7 +104,6 @@ extension RecruitmentCatalogView: StoryboardView {
 
         searchController.searchBar.rx.text
             .distinctUntilChanged()
-            .debounce(.milliseconds(100), scheduler: MainScheduler.instance)
             .map(Reactor.Action.search)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)

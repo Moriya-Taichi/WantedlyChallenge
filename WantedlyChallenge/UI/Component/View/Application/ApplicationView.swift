@@ -12,6 +12,12 @@ import UIKit
 
 final class ApplicationView: UIView {
 
+    @IBOutlet private weak var completedLabel: UILabel! {
+        didSet {
+            completedLabel.text = "応募が完了しました！\n企業からの連絡を待ちましょう！"
+        }
+    }
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var choicesTableView: UITableView! {
         didSet {
             choicesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -75,6 +81,28 @@ extension ApplicationView: StoryboardView {
         backgroundButton.rx.tap
             .map { _ in TransitionEvent.dismiss }
             .bind(to: transitionEventSubject)
+            .disposed(by: disposeBag)
+
+        applicateButton.rx.tap
+            .map { _ in Reactor.Action.applicate }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+
+        reactor.state.map { $0.isSucceed }
+            .distinctUntilChanged()
+            .filter { $0 }
+            .subscribe(onNext: { [weak self] _ in
+                UIView.animate(withDuration: 0.3,
+                               animations: {
+                                self?.applicateButton.alpha = 0
+                                self?.choicesTableView.alpha = 0
+                                self?.titleLabel.alpha = 0
+                }) { _ in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self?.transitionEventSubject.onNext(.dismiss)
+                    }
+                }
+            })
             .disposed(by: disposeBag)
 
         reactor.state.map { $0.choices }

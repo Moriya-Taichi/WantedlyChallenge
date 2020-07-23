@@ -29,11 +29,22 @@ final class RecruitmentViewController: UIViewController {
         }
         recruitmentView.reactor = reactor
         self.view.addSubview(recruitmentView)
-        self.navigationController?.navigationBar.isHidden = true
-        recruitmentView.transactionEventStream
-            .subscribe(onNext: {[weak self] _ in
-                self?.router?.back()
+        recruitmentView.transitionEventStream
+            .subscribe(onNext: {[weak self] event in
+                switch event {
+                case .back:
+                    self?.router?.back()
+                case let .showApplication(id):
+                    self?.router?.showApplication(id: id)
+                default:
+                    break
+                }
             })
             .disposed(by: disposeBag)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
 }

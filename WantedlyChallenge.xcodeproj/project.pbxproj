@@ -67,6 +67,10 @@
 		8DAC5C6924C7175C007A8B67 /* RecruitmentPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC5C6824C7175C007A8B67 /* RecruitmentPresentable.swift */; };
 		8DEC984624C87CFE00D4EF20 /* RecruitmentStaffCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEC984524C87CFE00D4EF20 /* RecruitmentStaffCollectionViewCell.swift */; };
 		8DEC984824C9212800D4EF20 /* RecruitmentImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEC984724C9212800D4EF20 /* RecruitmentImage.swift */; };
+		8DEC984B24C96AA400D4EF20 /* ApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEC984A24C96AA400D4EF20 /* ApplicationView.swift */; };
+		8DEC984D24C96AB300D4EF20 /* ApplicationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DEC984C24C96AB300D4EF20 /* ApplicationView.xib */; };
+		8DEC985024C9716E00D4EF20 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEC984F24C9716E00D4EF20 /* ApplicationViewController.swift */; };
+		8DEC985324C974F700D4EF20 /* ApplicationViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEC985224C974F700D4EF20 /* ApplicationViewReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +160,10 @@
 		8DAC5C6824C7175C007A8B67 /* RecruitmentPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentPresentable.swift; sourceTree = "<group>"; };
 		8DEC984524C87CFE00D4EF20 /* RecruitmentStaffCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentStaffCollectionViewCell.swift; sourceTree = "<group>"; };
 		8DEC984724C9212800D4EF20 /* RecruitmentImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentImage.swift; sourceTree = "<group>"; };
+		8DEC984A24C96AA400D4EF20 /* ApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationView.swift; sourceTree = "<group>"; };
+		8DEC984C24C96AB300D4EF20 /* ApplicationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicationView.xib; sourceTree = "<group>"; };
+		8DEC984F24C9716E00D4EF20 /* ApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
+		8DEC985224C974F700D4EF20 /* ApplicationViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewReactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +292,7 @@
 		8DAC5BC024C27316007A8B67 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8DEC984E24C9714200D4EF20 /* Application */,
 				8DAC5C1424C2B696007A8B67 /* Recruitment */,
 				8DAC5C1324C2B673007A8B67 /* RecruitmentCatalog */,
 			);
@@ -293,6 +302,7 @@
 		8DAC5BC124C27321007A8B67 /* Reactor */ = {
 			isa = PBXGroup;
 			children = (
+				8DEC985124C974E600D4EF20 /* Application */,
 				8DAC5C5B24C6F305007A8B67 /* Recruitment */,
 				8DAC5C1924C2EDC7007A8B67 /* RecruitmentCatalog */,
 			);
@@ -353,6 +363,7 @@
 		8DAC5C0424C29721007A8B67 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8DEC984924C96A8E00D4EF20 /* Application */,
 				8DAC5C6024C70713007A8B67 /* Recruitment */,
 				8DAC5C5024C696D3007A8B67 /* RecruitmentCatalog */,
 				8DAC5C0624C29F91007A8B67 /* RecruitmentCellView */,
@@ -530,6 +541,31 @@
 			path = RecruitmentStaff;
 			sourceTree = "<group>";
 		};
+		8DEC984924C96A8E00D4EF20 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8DEC984A24C96AA400D4EF20 /* ApplicationView.swift */,
+				8DEC984C24C96AB300D4EF20 /* ApplicationView.xib */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8DEC984E24C9714200D4EF20 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8DEC984F24C9716E00D4EF20 /* ApplicationViewController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8DEC985124C974E600D4EF20 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8DEC985224C974F700D4EF20 /* ApplicationViewReactor.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -636,6 +672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DAC5B5B24C1BA3C007A8B67 /* LaunchScreen.storyboard in Resources */,
+				8DEC984D24C96AB300D4EF20 /* ApplicationView.xib in Resources */,
 				8DAC5C5424C69C3C007A8B67 /* RecruitmentCatalogView.xib in Resources */,
 				8DAC5C0824C2A130007A8B67 /* RecruitmentCellView.xib in Resources */,
 				8DAC5C0D24C2A167007A8B67 /* RecruitmentCollectionViewCell.xib in Resources */,
@@ -693,8 +730,10 @@
 				8DAC5B4F24C1BA3B007A8B67 /* AppDelegate.swift in Sources */,
 				8DAC5C5A24C6B5C4007A8B67 /* RwcruitmentCellViewReactor.swift in Sources */,
 				8DAC5C2024C3FDE8007A8B67 /* CompanyImage.swift in Sources */,
+				8DEC985324C974F700D4EF20 /* ApplicationViewReactor.swift in Sources */,
 				8DEC984624C87CFE00D4EF20 /* RecruitmentStaffCollectionViewCell.swift in Sources */,
 				8DAC5C0A24C2A140007A8B67 /* RecruitmentCellView.swift in Sources */,
+				8DEC984B24C96AA400D4EF20 /* ApplicationView.swift in Sources */,
 				8DAC5C2A24C42D69007A8B67 /* Page.swift in Sources */,
 				8DAC5C3024C500BF007A8B67 /* RecruitmentService.swift in Sources */,
 				8DAC5C0F24C2A1DE007A8B67 /* RecruitmentCollectionViewCell.swift in Sources */,
@@ -716,6 +755,7 @@
 				8DAC5C1B24C2EDE2007A8B67 /* RecruitmentCatalogViewReactor.swift in Sources */,
 				8DAC5C4524C56255007A8B67 /* RecruitmentCreatable.swift in Sources */,
 				8DEC984824C9212800D4EF20 /* RecruitmentImage.swift in Sources */,
+				8DEC985024C9716E00D4EF20 /* ApplicationViewController.swift in Sources */,
 				8DAC5C5F24C70707007A8B67 /* RecruitmentViewController.swift in Sources */,
 				8DAC5C4324C5507E007A8B67 /* Container.swift in Sources */,
 				8DAC5C4F24C5923A007A8B67 /* Parser.swift in Sources */,

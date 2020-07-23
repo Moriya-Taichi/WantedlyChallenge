@@ -12,6 +12,7 @@ import Swinject
 protocol RecruitmentCreatable {
     func createRecruitmentCatalog() -> RecruitmentCatalogViewController
     func createRecruitment(id: Int) -> RecruitmentViewController
+    func createApplication(id: Int) -> ApplicationViewController
 }
 
 extension RecruitmentCreatable where Self: NavigationRouter {
@@ -19,6 +20,12 @@ extension RecruitmentCreatable where Self: NavigationRouter {
         let recruitmentViewController = RecruitmentCatalogViewController()
         recruitmentViewController.reactor = RecruitmentCatalogViewReactor(recruitmentService: self.container~>)
         return recruitmentViewController
+    }
+
+    func createApplication(id: Int) -> ApplicationViewController {
+        let applicationViewController = ApplicationViewController()
+        applicationViewController.reactor = ApplicationViewReactor(id: id)
+        return applicationViewController
     }
 
     func createRecruitment(id: Int) -> RecruitmentViewController {

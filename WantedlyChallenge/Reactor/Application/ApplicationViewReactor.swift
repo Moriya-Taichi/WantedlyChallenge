@@ -6,4 +6,28 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
-import Foundation
+import ReactorKit
+import RxSwift
+
+final class ApplicationViewReactor: Reactor {
+
+    enum Action {
+
+    }
+
+    enum Mutation {
+
+    }
+
+    struct State {
+
+    }
+
+    var initialState: State
+    private let recruitmentId: Int
+
+    init(id: Int) {
+        initialState = State()
+        recruitmentId = id
+    }
+}

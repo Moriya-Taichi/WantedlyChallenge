@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CompanyImage: Codable, Hashable {
+struct RecruitmentImage: Codable, Hashable {
     let original: String
     let i320131X2: String
     let i320131: String

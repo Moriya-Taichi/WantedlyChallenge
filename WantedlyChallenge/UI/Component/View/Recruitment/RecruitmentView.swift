@@ -66,9 +66,9 @@ final class RecruitmentView: UIView {
 
     var disposeBag = DisposeBag()
 
-    private let transactionEventSubject = PublishSubject<Void>()
-    var transactionEventStream: Observable<Void> {
-        return transactionEventSubject
+    private let transitionEventSubject = PublishSubject<TransitionEvent>()
+    var transitionEventStream: Observable<TransitionEvent> {
+        return transitionEventSubject
     }
     private let mediumFeedBackGenerator = UIImpactFeedbackGenerator(style: .medium)
     private let lightFeedbackgGenerator = UIImpactFeedbackGenerator(style: .light)
@@ -141,7 +141,8 @@ extension RecruitmentView: StoryboardView {
             .disposed(by: disposeBag)
 
         backButton.rx.tap
-            .bind(to: transactionEventSubject)
+            .map { _ in TransitionEvent.back }
+            .bind(to: transitionEventSubject)
             .disposed(by: disposeBag)
 
         reactor.state.map { $0.recruitment }
@@ -207,6 +208,12 @@ extension RecruitmentView: StoryboardView {
             .subscribe(onNext: {[weak self] contentOffset in
                 self?.handleScroll(scroll: contentOffset.y)
             })
+            .disposed(by: disposeBag)
+
+        applicationButoton.rx.tap
+            .compactMap { _ in reactor.currentState.recruitment?.id }
+            .map(TransitionEvent.showApplication)
+            .bind(to: transitionEventSubject)
             .disposed(by: disposeBag)
     }
 }

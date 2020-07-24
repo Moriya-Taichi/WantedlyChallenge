@@ -4,8 +4,8 @@
 
 Wantedly Summer Intern のiOSコースの選考課題です  
 
-<img src="Doc/SampleSearch.gif" width = 40%>
-<img src="Doc/SamplePagination.gif" width = 40%>
+<img src="Doc/SampleSearch.gif" width = 40%><img src="Doc/SamplePagination.gif" width = 40%>
+
 
 ## 開発環境
 

@@ -31,6 +31,11 @@ final class ApplicationView: UIView {
         }
     }
     @IBOutlet private weak var backgroundButton: UIButton!
+    @IBOutlet private weak var containerView: UIView! {
+        didSet {
+            containerView.layer.cornerRadius = 5
+        }
+    }
 
     private let transitionEventSubject = PublishSubject<TransitionEvent>()
     var transitionEventStream: Observable<TransitionEvent> {

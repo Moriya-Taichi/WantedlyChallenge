@@ -58,11 +58,13 @@ final class RecruitmentCatalogViewReactor: Reactor {
             }
             return .empty()
         case let .search(word):
-            guard
-                let word = word,
-                !word.isEmpty
-                else {
+            guard let word = word else {
                     return .empty()
+            }
+
+            if word.isEmpty {
+                self.action.onNext(.load)
+                return .empty()
             }
             let serchedRecruitments = recruitmentService
                 .serchRecruitment(word: word,

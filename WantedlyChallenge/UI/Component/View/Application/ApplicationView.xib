@@ -15,6 +15,7 @@
                 <outlet property="backgroundButton" destination="plc-Pl-eFg" id="MbG-dW-dw3"/>
                 <outlet property="choicesTableView" destination="Ajz-Je-3QX" id="eBQ-4U-exD"/>
                 <outlet property="completedLabel" destination="MQW-le-XFk" id="8ak-W8-Yvr"/>
+                <outlet property="containerView" destination="cKr-ee-A9W" id="66I-FA-aja"/>
                 <outlet property="titleLabel" destination="J5G-vj-znb" id="MJy-hs-IOE"/>
             </connections>
         </placeholder>
@@ -30,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <blurEffect style="regular"/>
+                    <blurEffect style="systemThinMaterial"/>
                 </visualEffectView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plc-Pl-eFg" userLabel="BackgroundButton">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>

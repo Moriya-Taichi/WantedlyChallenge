@@ -77,15 +77,10 @@ final class RecruitmentCatalogView: UIView {
     }
 
     private func setupActivityIndicator() {
-        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 96, height: 96)
         activityIndicator.center = self.center
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.color = UIColor(
-            red: 17 / 255,
-            green: 146 / 255,
-            blue: 196 / 255,
-            alpha: 1
-        )
+        activityIndicator.color = .white
         addSubview(activityIndicator)
     }
 }
@@ -104,7 +99,13 @@ extension RecruitmentCatalogView: StoryboardView {
 
         searchController.searchBar.rx.text
             .distinctUntilChanged()
+            .skip(1)
             .map(Reactor.Action.search)
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+
+        searchController.searchBar.rx.cancelButtonClicked
+            .map { _ in Reactor.Action.load }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
 

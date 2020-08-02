@@ -1,0 +1,43 @@
+name: WantedlyChallenge
+options:
+  bundleIdPrefix: mori
+
+targets:
+  WantedlyChallenge:
+    type: application
+    platform: iOS
+    deploymentTarget: "11.0"
+    sources: [WantedlyChallenge]
+    dependencies:
+      - carthage: RxCocoa
+      - carthage: RxSwift
+      - carthage: RxRelay
+      - carthage: RxOptional
+      - carthage: RxMoya
+      - carthage: Moya
+      - carthage: Alamofire
+      - carthage: ReactorKit
+      - carthage: ReactorKitRuntime
+      - carthage: WeakMapTable
+      - carthage: Swinject
+      - carthage: SwinjectAutoregistration
+      - carthage: SDWebImage
+      - carthage: SDWebImageMapKit
+      - carthage: DiffableDataSources
+      - carthage: DifferenceKit
+
+  WantedlyChallengeTests:
+      type: bundle.unit-test
+      platform: iOS
+      deploymentTarget: "11.0"
+      sources: [WantedlyChallengeTests]
+      dependencies:
+        - target: WantedlyChallenge
+
+  WantedlyChallengeUITests:
+      type: bundle.unit-test
+      platform: iOS
+      deploymentTarget: "11.0"
+      sources: [WantedlyChallengeUITests]
+      dependencies:
+        - target: WantedlyChallenge

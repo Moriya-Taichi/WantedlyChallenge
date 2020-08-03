@@ -14,7 +14,7 @@ XCode11.5, Swift5.2.4
 ## SetUp
 
 ```
-make
+make setup
 ```
 
 ReactorKitをCarthageで入れているのでインストールのコマンドは  
@@ -73,3 +73,6 @@ ReatorKit(Flux)を使用しました。
 
 - 設計面は可能な限りProtocol Orientedにして抽象に依存するようにしました。  
 またViewControllerの責務を考えた際にライフサイクルに則り、適切なオブジェクトを生成し管理することだと考えたので、VCにおいてはカスタムViewの生成、Reactorの受け渡し、画面遷移、NavigationBarのコントロールに限定しました。
+
+## 追記
+心残りだった、Mint, Xcodegen, swiftlint, swiftformatを導入

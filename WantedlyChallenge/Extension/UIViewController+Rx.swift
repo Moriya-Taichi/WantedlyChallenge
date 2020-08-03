@@ -16,4 +16,3 @@ extension Reactive where Base: UIViewController {
             .share(replay: 1)
     }
 }
-

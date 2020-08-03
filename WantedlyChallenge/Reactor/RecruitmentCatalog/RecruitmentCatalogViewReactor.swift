@@ -6,12 +6,11 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
+import Foundation
 import ReactorKit
 import RxSwift
-import Foundation
 
 final class RecruitmentCatalogViewReactor: Reactor {
-
     enum Action {
         case load
         case reload(String?)
@@ -33,9 +32,13 @@ final class RecruitmentCatalogViewReactor: Reactor {
     private let recruitmentService: RecruitmentServiceType
 
     init(recruitmentService: RecruitmentServiceType) {
-        initialState = State(page: .init(pageNumber: 0,
-                                         collection: []),
-                             isLoading: false)
+        initialState = State(
+            page: .init(
+                pageNumber: 0,
+                collection: []
+            ),
+            isLoading: false
+        )
         self.recruitmentService = recruitmentService
     }
 
@@ -59,7 +62,7 @@ final class RecruitmentCatalogViewReactor: Reactor {
             return .empty()
         case let .search(word):
             guard let word = word else {
-                    return .empty()
+                return .empty()
             }
 
             if word.isEmpty {
@@ -67,8 +70,10 @@ final class RecruitmentCatalogViewReactor: Reactor {
                 return .empty()
             }
             let serchedRecruitments = recruitmentService
-                .serchRecruitment(word: word,
-                                  page: 0)
+                .serchRecruitment(
+                    word: word,
+                    page: 0
+                )
                 .map { $0.map(CellItem.recruitmentCellItem) }
                 .map(Mutation.setRecruitments)
                 .takeUntil(self.action.filter {
@@ -81,10 +86,10 @@ final class RecruitmentCatalogViewReactor: Reactor {
             return .concat([startLoading, serchedRecruitments, endLoading])
         case let .paginate(word):
             guard
-                !currentState.isLoading &&
-                    !currentState.page.collection.isEmpty
-                else {
-                    return .empty()
+                !currentState.isLoading,
+                !currentState.page.collection.isEmpty
+            else {
+                return .empty()
             }
             guard let word = word, !word.isEmpty else {
                 let recruitmentPagination = recruitmentService
@@ -95,8 +100,10 @@ final class RecruitmentCatalogViewReactor: Reactor {
                 return .concat([startLoading, recruitmentPagination, endLoading])
             }
             let serchPagenation = recruitmentService
-                .serchRecruitment(word: word,
-                                  page: currentState.page.pageNumber)
+                .serchRecruitment(
+                    word: word,
+                    page: currentState.page.pageNumber
+                )
                 .map { $0.map(CellItem.recruitmentCellItem) }
                 .map { self.currentState.page.paginate($0) }
                 .map(Mutation.setRecruitments)

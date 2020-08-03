@@ -26,19 +26,20 @@ extension NavigationRouter {
 }
 
 final class InitialRouter: Router {
-
     var viewController: UIViewController
     var container: Resolver
 
     init(container: Resolver) {
         self.container = container
-        self.viewController = .init()
+        viewController = .init()
     }
 
     func navigate() {
-        let recruitRouter = RecruitmentRouter(container: container,
-                                            navigationController: .init())
-        self.viewController = recruitRouter.viewController
+        let recruitRouter = RecruitmentRouter(
+            container: container,
+            navigationController: .init()
+        )
+        viewController = recruitRouter.viewController
         recruitRouter.navigate()
     }
 }

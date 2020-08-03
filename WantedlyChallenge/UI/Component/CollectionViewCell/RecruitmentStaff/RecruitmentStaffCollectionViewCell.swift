@@ -9,12 +9,11 @@
 import UIKit
 
 final class RecruitmentStaffCollectionViewCell: UICollectionViewCell {
-
     private var imageView: UIImageView?
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        imageView = UIImageView(frame: self.frame)
+        imageView = UIImageView(frame: frame)
         setupImageView()
     }
 
@@ -33,11 +32,9 @@ final class RecruitmentStaffCollectionViewCell: UICollectionViewCell {
             blue: 196 / 255,
             alpha: 1
         )
-        imageView.center = self.contentView.center
-        self.addSubview(imageView)
+        imageView.center = contentView.center
+        addSubview(imageView)
     }
 
-    func setCellContents(staff: Staff) {
-
-    }
+    func setCellContents(staff: Staff) {}
 }

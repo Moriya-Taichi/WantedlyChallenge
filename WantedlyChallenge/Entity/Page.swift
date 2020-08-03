@@ -9,7 +9,6 @@
 import Foundation
 
 struct Page<T: Hashable>: Equatable {
-
     let pageNumber: Int
     let collection: [T]
 
@@ -18,13 +17,17 @@ struct Page<T: Hashable>: Equatable {
     }
 
     func map<Output>(_ transform: (T) -> Output) -> Page<Output> {
-        let mappedCollection = self.collection.map(transform)
-        return Page<Output>(pageNumber: self.pageNumber,
-                            collection: mappedCollection)
+        let mappedCollection = collection.map(transform)
+        return Page<Output>(
+            pageNumber: pageNumber,
+            collection: mappedCollection
+        )
     }
 
     func paginate(_ page: Self) -> Self {
-        return Page(pageNumber: page.pageNumber,
-                    collection: self.collection + page.collection)
+        return Page(
+            pageNumber: page.pageNumber,
+            collection: collection + page.collection
+        )
     }
 }

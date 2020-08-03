@@ -12,9 +12,11 @@ extension UIView {
     func loadXib() {
         let layout = Bundle
             .main
-            .loadNibNamed(String(describing: type(of: self)),
-                          owner: self)!.first as! UIView
-        layout.frame = self.bounds
-        self.addSubview(layout)
+            .loadNibNamed(
+                String(describing: type(of: self)),
+                owner: self
+            )!.first as! UIView
+        layout.frame = bounds
+        addSubview(layout)
     }
 }

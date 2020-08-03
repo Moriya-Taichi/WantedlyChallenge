@@ -13,8 +13,7 @@ import RxSwift
 import UIKit
 
 final class RecruitmentCatalogView: UIView {
-
-    @IBOutlet private weak var collectionView: UICollectionView! {
+    @IBOutlet private var collectionView: UICollectionView! {
         didSet {
             collectionView.register(RecruitmentCollectionViewCell.self)
         }
@@ -26,15 +25,17 @@ final class RecruitmentCatalogView: UIView {
 
     private lazy var dataSource = CollectionViewDiffableDataSource<Section, CellItem>(
         collectionView: collectionView
-        )
+    )
     { collectionView, indexPath, item -> UICollectionViewCell? in
         switch item {
         case let .recruitmentCellItem(recruitment):
             guard
-                let cell = collectionView.dequeReusableCell(RecruitmentCollectionViewCell.self,
-                                                            indexPath: indexPath)
-                else {
-                    return UICollectionViewCell()
+                let cell = collectionView.dequeReusableCell(
+                    RecruitmentCollectionViewCell.self,
+                    indexPath: indexPath
+                )
+            else {
+                return UICollectionViewCell()
             }
             cell.setCellContents(recruitment: recruitment)
             return cell
@@ -70,15 +71,17 @@ final class RecruitmentCatalogView: UIView {
 
     private func setCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: self.frame.width * 0.95,
-                                 height: self.frame.height / 3)
+        layout.itemSize = CGSize(
+            width: frame.width * 0.95,
+            height: frame.height / 3
+        )
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.refreshControl = refreshControl
     }
 
     private func setupActivityIndicator() {
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 96, height: 96)
-        activityIndicator.center = self.center
+        activityIndicator.center = center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.color = .white
         addSubview(activityIndicator)
@@ -116,11 +119,10 @@ extension RecruitmentCatalogView: StoryboardView {
             .disposed(by: disposeBag)
 
         collectionView.rx.itemSelected
-            .subscribe(onNext: {[weak self] indexPath in
+            .subscribe(onNext: { [weak self] indexPath in
                 guard
                     case let .recruitmentCellItem(recruitment) = self?.reactor?.currentState.page.collection[indexPath.row]
-                    else
-                {
+                else {
                     return
                 }
                 self?.selectedCellSubject.onNext(recruitment.id)
@@ -142,7 +144,7 @@ extension RecruitmentCatalogView: StoryboardView {
 
         reactor.state.map { $0.isLoading }
             .distinctUntilChanged()
-            .subscribe(onNext: {[weak self] isLoading in
+            .subscribe(onNext: { [weak self] isLoading in
                 if isLoading {
                     self?.activityIndicator.startAnimating()
                 } else {

@@ -13,7 +13,9 @@ extension UICollectionView {
                                                     indexPath: IndexPath)
         -> T?
     {
-        return self.dequeueReusableCell(withReuseIdentifier: String(describing: cellType),
-                                        for: indexPath) as? T
+        return dequeueReusableCell(
+            withReuseIdentifier: String(describing: cellType),
+            for: indexPath
+        ) as? T
     }
 }

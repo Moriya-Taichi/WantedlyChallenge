@@ -10,7 +10,6 @@ import ReactorKit
 import RxSwift
 
 final class RecruitmentCellViewReactor: Reactor {
-
     var initialState: State
 
     enum Action {
@@ -27,15 +26,16 @@ final class RecruitmentCellViewReactor: Reactor {
     }
 
     init(recruitment: Recruitment) {
-        initialState = State(isBookmark: recruitment.canBookmark,
-                             recruitment: recruitment)
-
+        initialState = State(
+            isBookmark: recruitment.canBookmark,
+            recruitment: recruitment
+        )
     }
 
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .bookmark:
-            //本来ならここで通信処理
+            // 本来ならここで通信処理
             return .just(.setIsBookmarked(!currentState.isBookmark))
         }
     }

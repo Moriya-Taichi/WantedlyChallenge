@@ -10,7 +10,6 @@ import ReactorKit
 import RxSwift
 
 final class RecruitmentViewReactor: Reactor {
-
     enum Action {
         case load
         case bookmark
@@ -35,7 +34,7 @@ final class RecruitmentViewReactor: Reactor {
 
     init(id: Int, recruitmentService: RecruitmentServiceType) {
         initialState = State(recruitment: nil, isBookmark: false, displayStaff: nil)
-        self.recruitmentId = id
+        recruitmentId = id
         self.recruitmentService = recruitmentService
     }
 
@@ -45,13 +44,17 @@ final class RecruitmentViewReactor: Reactor {
             let recruitment = recruitmentService.fetchRecruitment(id: recruitmentId)
                 .flatMap { recruitment -> Observable<Mutation> in
                     if let staff = recruitment.staffings.first {
-                        return .concat([.just(.setRecruitment(recruitment)),
-                                        .just(.setIsBookmark(recruitment.canBookmark)),
-                                        .just(.setStaff(staff))])
+                        return .concat([
+                            .just(.setRecruitment(recruitment)),
+                            .just(.setIsBookmark(recruitment.canBookmark)),
+                            .just(.setStaff(staff))
+                        ])
                     }
-                    return .concat([.just(.setRecruitment(recruitment)),
-                                    .just(.setIsBookmark(recruitment.canBookmark))])
-            }
+                    return .concat([
+                        .just(.setRecruitment(recruitment)),
+                        .just(.setIsBookmark(recruitment.canBookmark))
+                    ])
+                }
             return recruitment
         case .bookmark:
             return .just(.setIsBookmark(!currentState.isBookmark))
@@ -59,7 +62,7 @@ final class RecruitmentViewReactor: Reactor {
             guard
                 let recruitment = currentState.recruitment,
                 index < recruitment.staffings.count
-                else { return .empty() }
+            else { return .empty() }
             return .just(.setStaff(recruitment.staffings[index]))
         }
     }

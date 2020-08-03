@@ -12,18 +12,24 @@ import Swinject
 final class DIContainer: Assembly {
     func assemble(container: Container) {
         container
-            .autoregister(RecruitmentRepositoryType.self,
-                          initializer: RecruitmentRepository.init)
+            .autoregister(
+                RecruitmentRepositoryType.self,
+                initializer: RecruitmentRepository.init
+            )
             .inObjectScope(.container)
 
         container
-            .autoregister(RecruitmentServiceType.self,
-                          initializer: RecruitmentService.init)
+            .autoregister(
+                RecruitmentServiceType.self,
+                initializer: RecruitmentService.init
+            )
             .inObjectScope(.container)
 
         container
-            .autoregister(RecruitmentStoreType.self,
-                          initializer: RecruitmentStore.init)
+            .autoregister(
+                RecruitmentStoreType.self,
+                initializer: RecruitmentStore.init
+            )
             .inObjectScope(.container)
     }
 }

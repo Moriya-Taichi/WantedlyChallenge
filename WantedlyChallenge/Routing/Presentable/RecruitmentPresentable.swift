@@ -26,7 +26,7 @@ extension RecruitmentPresentable where Self: NavigationRouter {
     func showRecruitment(id: Int) {
         let recruitmentViewController = createRecruitment(id: id)
         recruitmentViewController.router = self
-        self.navigationController.pushViewController(recruitmentViewController, animated: true)
+        navigationController.pushViewController(recruitmentViewController, animated: true)
     }
 
     func showApplication(id: Int) {
@@ -34,15 +34,17 @@ extension RecruitmentPresentable where Self: NavigationRouter {
         applicationViewController.modalPresentationStyle = .overFullScreen
         applicationViewController.modalTransitionStyle = .crossDissolve
         applicationViewController.router = self
-        self.viewController.present(applicationViewController,
-                                    animated: true)
+        viewController.present(
+            applicationViewController,
+            animated: true
+        )
     }
 
     func back() {
-        self.navigationController.popViewController(animated: true)
+        navigationController.popViewController(animated: true)
     }
 
     func dismiss() {
-        self.viewController.presentedViewController?.dismiss(animated: true)
+        viewController.presentedViewController?.dismiss(animated: true)
     }
 }

@@ -10,7 +10,6 @@ import ReactorKit
 import RxSwift
 
 final class ApplicationViewReactor: Reactor {
-
     enum Action {
         case selectChoice(Int)
         case applicate
@@ -32,12 +31,14 @@ final class ApplicationViewReactor: Reactor {
 
     var initialState: State
     private let recruitmentId: Int
-    private let choices = ["今すぐ一緒に働きたい",
-                           "まずは話を聞いてみたい",
-                           "少しだけ興味があります"]
+    private let choices = [
+        "今すぐ一緒に働きたい",
+        "まずは話を聞いてみたい",
+        "少しだけ興味があります"
+    ]
 
     init(id: Int) {
-        initialState = State(isSucceed: false, choices: choices ,selectedChoice: nil)
+        initialState = State(isSucceed: false, choices: choices, selectedChoice: nil)
         recruitmentId = id
     }
 
@@ -47,7 +48,7 @@ final class ApplicationViewReactor: Reactor {
             guard index < currentState.choices.count else { return .empty() }
             return .just(.setChoice(currentState.choices[index]))
         case .applicate:
-            //本来はここで通信
+            // 本来はここで通信
             return .just(.setIsSucceed(true))
         }
     }

@@ -22,12 +22,12 @@ final class ApplicationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        applicationView = ApplicationView(frame: self.view.frame)
+        applicationView = ApplicationView(frame: view.frame)
         guard let applicationView = applicationView else {
             return
         }
         applicationView.reactor = reactor
-        self.view.addSubview(applicationView)
+        view.addSubview(applicationView)
 
         applicationView.transitionEventStream
             .subscribe(onNext: { [weak self] event in

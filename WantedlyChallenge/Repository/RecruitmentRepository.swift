@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import RxSwift
-import RxMoya
 import Moya
+import RxMoya
+import RxSwift
 
 protocol RecruitmentRepositoryType {
     func fetchRecruitment(input: WantedlyRequestType)
@@ -17,25 +17,23 @@ protocol RecruitmentRepositoryType {
 }
 
 struct RecruitmentRepository: RecruitmentRepositoryType {
-
     let provider: MoyaProvider<WantedlyRequestType> = .init()
 
     func fetchRecruitment(input: WantedlyRequestType)
-        -> Single<[Recruitment]> {
-            return provider.rx.request(input)
-                .map { response -> [Recruitment] in
-                    do {
-                        let jsonObject = try JSONSerialization.jsonObject(
-                            with: response.data,
-                            options: .fragmentsAllowed
-                            ) as? [String: Any]
-                        let recruitment = try parse([Recruitment].self, data: jsonObject?["data"])
-                        return recruitment
-                    } catch let error {
-                        throw error
-                    }
+        -> Single<[Recruitment]>
+    {
+        return provider.rx.request(input)
+            .map { response -> [Recruitment] in
+                do {
+                    let jsonObject = try JSONSerialization.jsonObject(
+                        with: response.data,
+                        options: .fragmentsAllowed
+                    ) as? [String: Any]
+                    let recruitment = try parse([Recruitment].self, data: jsonObject?["data"])
+                    return recruitment
+                } catch {
+                    throw error
+                }
             }
     }
 }
-
-

@@ -6,15 +6,13 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
-import SwinjectAutoregistration
 import Swinject
+import SwinjectAutoregistration
 import UIKit
 
 final class RecruitmentRouter: NavigationRouter, RecruitmentPresentable {
-
     var navigationController: UINavigationController
     var container: Resolver
-
 
     init(container: Resolver, navigationController: UINavigationController) {
         self.container = container
@@ -27,4 +25,3 @@ final class RecruitmentRouter: NavigationRouter, RecruitmentPresentable {
         navigationController.viewControllers = [recruitmentViewController]
     }
 }
-

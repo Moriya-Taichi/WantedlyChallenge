@@ -11,27 +11,29 @@ import RxSwift
 import UIKit
 
 final class ApplicationView: UIView {
-
-    @IBOutlet private weak var completedLabel: UILabel! {
+    @IBOutlet private var completedLabel: UILabel! {
         didSet {
             completedLabel.text = "応募が完了しました！\n企業からの連絡を待ちましょう！"
         }
     }
-    @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var choicesTableView: UITableView! {
+
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var choicesTableView: UITableView! {
         didSet {
             choicesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         }
     }
-    @IBOutlet private weak var applicateButton: UIButton! {
+
+    @IBOutlet private var applicateButton: UIButton! {
         didSet {
             applicateButton.layer.cornerRadius = applicateButton.frame.height / 2
             applicateButton.setTitleColor(.white, for: .normal)
             applicateButton.setTitleColor(.lightGray, for: .disabled)
         }
     }
-    @IBOutlet private weak var backgroundButton: UIButton!
-    @IBOutlet private weak var containerView: UIView! {
+
+    @IBOutlet private var backgroundButton: UIButton!
+    @IBOutlet private var containerView: UIView! {
         didSet {
             containerView.layer.cornerRadius = 5
         }
@@ -58,12 +60,12 @@ final class ApplicationView: UIView {
 extension ApplicationView: StoryboardView {
     func bind(reactor: ApplicationViewReactor) {
         choicesTableView.rx.itemSelected
-            .do(onNext: {[weak self] indexPath in
+            .do(onNext: { [weak self] indexPath in
                 guard
                     let self = self,
                     let cell = self.choicesTableView.cellForRow(at: indexPath)
-                    else {
-                        return
+                else {
+                    return
                 }
                 cell.accessoryType = .checkmark
             })
@@ -76,8 +78,8 @@ extension ApplicationView: StoryboardView {
                 guard
                     let self = self,
                     let cell = self.choicesTableView.cellForRow(at: indexPath)
-                    else {
-                        return
+                else {
+                    return
                 }
                 cell.accessoryType = .none
             })
@@ -97,12 +99,14 @@ extension ApplicationView: StoryboardView {
             .distinctUntilChanged()
             .filter { $0 }
             .subscribe(onNext: { [weak self] _ in
-                UIView.animate(withDuration: 0.3,
-                               animations: {
-                                self?.applicateButton.alpha = 0
-                                self?.choicesTableView.alpha = 0
-                                self?.titleLabel.alpha = 0
-                }) { _ in
+                UIView.animate(
+                    withDuration: 0.3,
+                    animations: {
+                        self?.applicateButton.alpha = 0
+                        self?.choicesTableView.alpha = 0
+                        self?.titleLabel.alpha = 0
+                    }
+                ) { _ in
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         self?.transitionEventSubject.onNext(.dismiss)
                     }
@@ -112,7 +116,7 @@ extension ApplicationView: StoryboardView {
 
         reactor.state.map { $0.choices }
             .distinctUntilChanged()
-            .bind(to: choicesTableView.rx.items(cellIdentifier: "Cell")) { row, item, cell in
+            .bind(to: choicesTableView.rx.items(cellIdentifier: "Cell")) { _, item, cell in
                 cell.textLabel?.text = item
                 cell.selectionStyle = .none
             }

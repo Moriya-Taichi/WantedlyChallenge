@@ -7,25 +7,25 @@
 //
 
 import ReactorKit
-import SDWebImage
 import RxOptional
 import RxSwift
+import SDWebImage
 import UIKit
 
 final class RecruitmentCellView: UIView {
+    @IBOutlet private var recruitImageView: UIImageView!
+    @IBOutlet var bookmarkButton: UIButton!
 
-    @IBOutlet private weak var recruitImageView: UIImageView!
-    @IBOutlet weak var bookmarkButton: UIButton!
+    @IBOutlet private var lookingForLabel: UILabel!
+    @IBOutlet private var titleLabel: UILabel!
 
-    @IBOutlet private weak var lookingForLabel: UILabel!
-    @IBOutlet private weak var titleLabel: UILabel!
-
-    @IBOutlet private weak var companyIconView: UIImageView! {
+    @IBOutlet private var companyIconView: UIImageView! {
         didSet {
             companyIconView.layer.cornerRadius = companyIconView.frame.width / 2
         }
     }
-    @IBOutlet private weak var companyNameLabel: UILabel!
+
+    @IBOutlet private var companyNameLabel: UILabel!
 
     var disposeBag = DisposeBag()
     let mediumFeedBackGenerator = UIImpactFeedbackGenerator(style: .medium)
@@ -42,7 +42,6 @@ final class RecruitmentCellView: UIView {
     }
 
     private func setContents(recruitment: Recruitment) {
-
         titleLabel.text = recruitment.title
         lookingForLabel.text = recruitment.lookingFor
         companyNameLabel.text = recruitment.company.name
@@ -54,26 +53,29 @@ final class RecruitmentCellView: UIView {
 
     private func animateBookmark(isBookmark: Bool) {
         if isBookmark {
-            UIView.animate(withDuration: 0.2,
-                           animations: {
-                            self.bookmarkButton.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
-            }) { _ in
+            UIView.animate(
+                withDuration: 0.2,
+                animations: {
+                    self.bookmarkButton.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+                }
+            ) { _ in
                 UIView.animate(withDuration: 0.1) {
                     self.bookmarkButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
                 }
             }
         } else {
-            UIView.animate(withDuration: 0.2,
-                           animations: {
-                            self.bookmarkButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-            }) { _ in
+            UIView.animate(
+                withDuration: 0.2,
+                animations: {
+                    self.bookmarkButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                }
+            ) { _ in
                 UIView.animate(withDuration: 0.1) {
                     self.bookmarkButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
                 }
             }
         }
     }
-
 }
 
 extension RecruitmentCellView: StoryboardView {
@@ -106,7 +108,7 @@ extension RecruitmentCellView: StoryboardView {
             .disposed(by: disposeBag)
 
         bookmarkButton.rx.tap
-            .do(onNext: {[weak self] _ in
+            .do(onNext: { [weak self] _ in
                 guard let self = self else {
                     return
                 }
@@ -119,7 +121,7 @@ extension RecruitmentCellView: StoryboardView {
                     self.mediumFeedBackGenerator.impactOccurred()
                 }
             })
-            .map{ _ in Reactor.Action.bookmark }
+            .map { _ in Reactor.Action.bookmark }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }

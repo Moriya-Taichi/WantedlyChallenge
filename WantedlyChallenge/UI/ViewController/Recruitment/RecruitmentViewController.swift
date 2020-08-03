@@ -11,7 +11,6 @@ import RxSwift
 import UIKit
 
 final class RecruitmentViewController: UIViewController {
-
     private var recruitmentView: RecruitmentView?
     var reactor: RecruitmentViewReactor?
     var router: RecruitmentPresentable?
@@ -23,14 +22,14 @@ final class RecruitmentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        recruitmentView = RecruitmentView(frame: self.view.bounds)
+        recruitmentView = RecruitmentView(frame: view.bounds)
         guard let recruitmentView = recruitmentView else {
             return
         }
         recruitmentView.reactor = reactor
-        self.view.addSubview(recruitmentView)
+        view.addSubview(recruitmentView)
         recruitmentView.transitionEventStream
-            .subscribe(onNext: {[weak self] event in
+            .subscribe(onNext: { [weak self] event in
                 switch event {
                 case .back:
                     self?.router?.back()
@@ -45,6 +44,6 @@ final class RecruitmentViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
     }
 }

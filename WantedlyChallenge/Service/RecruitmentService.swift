@@ -16,7 +16,6 @@ protocol RecruitmentServiceType {
 }
 
 struct RecruitmentService: RecruitmentServiceType {
-
     private let repository: RecruitmentRepositoryType
     private let store: RecruitmentStoreType
 
@@ -36,7 +35,7 @@ struct RecruitmentService: RecruitmentServiceType {
         let input = WantedlyRequestType.nothing(page + 1)
         return repository.fetchRecruitment(input: input)
             .map { recruitments in
-                return Page(pageNumber: page + 1, collection: recruitments)
+                Page(pageNumber: page + 1, collection: recruitments)
             }
             .do(onSuccess: { newPage in
                 if page == 0 {
@@ -50,21 +49,22 @@ struct RecruitmentService: RecruitmentServiceType {
     }
 
     func serchRecruitment(word: String, page: Int)
-        -> Observable<Page<Recruitment>> {
-            let input = WantedlyRequestType.search((word: word, page: page + 1))
-            return repository.fetchRecruitment(input: input)
-                .map { recruitments in
-                    return Page(pageNumber: page + 1, collection: recruitments)
+        -> Observable<Page<Recruitment>>
+    {
+        let input = WantedlyRequestType.search((word: word, page: page + 1))
+        return repository.fetchRecruitment(input: input)
+            .map { recruitments in
+                Page(pageNumber: page + 1, collection: recruitments)
+            }
+            .do(onSuccess: { newPage in
+                if page == 0 {
+                    self.store.clear()
+                    self.store.store(recruitments: newPage.collection)
+                } else {
+                    self.store.store(recruitments: newPage.collection)
                 }
-                .do(onSuccess: { newPage in
-                    if page == 0 {
-                        self.store.clear()
-                        self.store.store(recruitments: newPage.collection)
-                    } else {
-                        self.store.store(recruitments: newPage.collection)
-                    }
-                })
-                .asObservable()
+            })
+            .asObservable()
     }
 
     func fetchRecruitment(id: Int) -> Observable<Recruitment> {

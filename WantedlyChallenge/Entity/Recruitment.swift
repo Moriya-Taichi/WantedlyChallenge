@@ -12,6 +12,7 @@ struct Recruitment: Codable, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
+
     let id: Int
     let title: String
     let description: String

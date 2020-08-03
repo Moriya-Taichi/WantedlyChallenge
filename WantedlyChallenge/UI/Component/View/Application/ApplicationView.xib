@@ -37,7 +37,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKr-ee-A9W">
-                    <rect key="frame" x="41.5" y="425.5" width="331" height="313.5"/>
+                    <rect key="frame" x="41.5" y="394" width="331" height="376.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="どのくらい興味があるか教えてください" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5G-vj-znb">
                             <rect key="frame" x="16" y="15" width="299" height="19.5"/>
@@ -46,17 +46,17 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="応募が完了しました！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQW-le-XFk">
-                            <rect key="frame" x="16" y="145" width="299" height="24"/>
+                            <rect key="frame" x="16" y="176.5" width="299" height="24"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                             <color key="textColor" name="systemBlack"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ajz-Je-3QX">
-                            <rect key="frame" x="0.0" y="50.5" width="331" height="183"/>
+                            <rect key="frame" x="0.0" y="50.5" width="331" height="246"/>
                             <color key="backgroundColor" name="systemWhite"/>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXj-0S-8ke">
-                            <rect key="frame" x="8" y="249.5" width="315" height="56"/>
+                            <rect key="frame" x="8" y="312.5" width="315" height="56"/>
                             <color key="backgroundColor" red="0.062745098040000002" green="0.52549019610000003" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="H2B-Fb-mOG"/>
@@ -99,7 +99,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="plc-Pl-eFg" secondAttribute="trailing" id="toJ-4C-3Bt"/>
                 <constraint firstItem="cKr-ee-A9W" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wsu-5M-s0H"/>
                 <constraint firstItem="plc-Pl-eFg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xC7-DU-x7F"/>
-                <constraint firstItem="cKr-ee-A9W" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.35" id="zzo-Su-Rf8"/>
+                <constraint firstItem="cKr-ee-A9W" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.42" id="zzo-Su-Rf8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>

@@ -6,8 +6,8 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
-import SwinjectAutoregistration
 import Swinject
+import SwinjectAutoregistration
 
 protocol RecruitmentCreatable {
     func createRecruitmentCatalog() -> RecruitmentCatalogViewController
@@ -18,7 +18,7 @@ protocol RecruitmentCreatable {
 extension RecruitmentCreatable where Self: NavigationRouter {
     func createRecruitmentCatalog() -> RecruitmentCatalogViewController {
         let recruitmentViewController = RecruitmentCatalogViewController()
-        recruitmentViewController.reactor = RecruitmentCatalogViewReactor(recruitmentService: self.container~>)
+        recruitmentViewController.reactor = RecruitmentCatalogViewReactor(recruitmentService: container~>)
         return recruitmentViewController
     }
 
@@ -30,8 +30,10 @@ extension RecruitmentCreatable where Self: NavigationRouter {
 
     func createRecruitment(id: Int) -> RecruitmentViewController {
         let recruitmentViewController = RecruitmentViewController()
-        recruitmentViewController.reactor = RecruitmentViewReactor(id: id,
-                                                                   recruitmentService: self.container~>)
+        recruitmentViewController.reactor = RecruitmentViewReactor(
+            id: id,
+            recruitmentService: container~>
+        )
         return recruitmentViewController
     }
 }

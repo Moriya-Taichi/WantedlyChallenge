@@ -6,19 +6,19 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
-import RxSwift
 import RxCocoa
+import RxSwift
 import UIKit
 
 extension Reactive where Base: UIScrollView {
     var isReachedBottom: Observable<Void> {
-        let source = self.contentOffset
-            .filter { [weak base] offset -> Bool in
+        let source = contentOffset
+            .filter { [weak base] _ -> Bool in
                 guard let base = base else { return false }
                 let offsetToBottom = base.contentOffset.y + base.bounds.height
                 return offsetToBottom >= base.contentSize.height - base.bounds.height / 2
             }
-            .map { _ in Void() }
+            .map { _ in () }
         return source
     }
 }

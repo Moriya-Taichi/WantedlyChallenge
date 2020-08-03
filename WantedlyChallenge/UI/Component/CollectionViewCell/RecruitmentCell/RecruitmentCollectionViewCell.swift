@@ -9,12 +9,11 @@
 import UIKit
 
 final class RecruitmentCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet private weak var recrutingCellView: RecruitmentCellView!
+    @IBOutlet private var recrutingCellView: RecruitmentCellView!
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.layer.cornerRadius = 5
+        layer.cornerRadius = 5
     }
 
     func setCellContents(recruitment: Recruitment) {

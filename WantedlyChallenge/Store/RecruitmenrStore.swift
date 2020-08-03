@@ -15,7 +15,6 @@ protocol RecruitmentStoreType {
 }
 
 final class RecruitmentStore: RecruitmentStoreType {
-
     private var storeDictionary: [String: [Recruitment]] = [:]
 
     func store(recruitments: [Recruitment]) {
@@ -31,12 +30,11 @@ final class RecruitmentStore: RecruitmentStoreType {
             return nil
         }
         return recruitments.first { recruitment -> Bool in
-            return recruitment.id == id
+            recruitment.id == id
         }
     }
 
     func clear() {
         storeDictionary = [:]
     }
-
 }

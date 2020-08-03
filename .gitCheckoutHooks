@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+PATH=$HOME/.rbenv/shims:/usr/local/bin:$PATH
+
+PREV_COMMIT=$1
+POST_COMMIT=$2
+
+DIFF=$(git diff $PREV_COMMIT..$POST_COMMIT --name-status --diff-filter=ADR | grep -e project.yml -e .swift)
+if [[ $DIFF != "" ]]; then
+    while read line
+    do
+        echo "$line"
+    done <<END
+    $DIFF
+END
+    mint run xcodegen
+fi

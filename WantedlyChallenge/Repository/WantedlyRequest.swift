@@ -19,8 +19,8 @@ extension WantedlyRequestType: TargetType {
         guard
             let urlString = Bundle.main.object(forInfoDictionaryKey: "API_URL") as? String,
             let url = URL(string: urlString)
-            else {
-                fatalError("Loading Url failed")
+        else {
+            fatalError("Loading Url failed")
         }
         return url
     }
@@ -40,8 +40,8 @@ extension WantedlyRequestType: TargetType {
                 ofType: "json"
             ),
             let data = FileHandle(forReadingAtPath: mockPath)?.readDataToEndOfFile()
-            else {
-                return .init()
+        else {
+            return .init()
         }
         return data
     }

@@ -91,8 +91,8 @@ final class RecruitmentView: UIView {
                     RecruitmentStaffCollectionViewCell.self,
                     indexPath: indexPath
                 )
-                else {
-                    return UICollectionViewCell()
+            else {
+                return UICollectionViewCell()
             }
             cell.setCellContents(staff: staff)
             return cell

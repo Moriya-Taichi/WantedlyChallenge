@@ -37,32 +37,33 @@ struct RecruitmentService: RecruitmentServiceType {
             .map { recruitments in
                 Page(pageNumber: page + 1, collection: recruitments)
             }
-        .do(onSuccess: { newPage in
-            if page == 0 {
-                self.store.clear()
-                self.store.store(recruitments: newPage.collection)
-            } else {
-                self.store.store(recruitments: newPage.collection)
-            }
-        })
+            .do(onSuccess: { newPage in
+                if page == 0 {
+                    self.store.clear()
+                    self.store.store(recruitments: newPage.collection)
+                } else {
+                    self.store.store(recruitments: newPage.collection)
+                }
+            })
             .asObservable()
     }
 
     func serchRecruitment(word: String, page: Int)
-        -> Observable<Page<Recruitment>> {
+        -> Observable<Page<Recruitment>>
+    {
         let input = WantedlyRequestType.search((word: word, page: page + 1))
         return repository.fetchRecruitment(input: input)
             .map { recruitments in
                 Page(pageNumber: page + 1, collection: recruitments)
             }
-        .do(onSuccess: { newPage in
-            if page == 0 {
-                self.store.clear()
-                self.store.store(recruitments: newPage.collection)
-            } else {
-                self.store.store(recruitments: newPage.collection)
-            }
-        })
+            .do(onSuccess: { newPage in
+                if page == 0 {
+                    self.store.clear()
+                    self.store.store(recruitments: newPage.collection)
+                } else {
+                    self.store.store(recruitments: newPage.collection)
+                }
+            })
             .asObservable()
     }
 

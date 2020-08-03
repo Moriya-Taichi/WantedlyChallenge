@@ -62,7 +62,7 @@ final class RecruitmentViewReactor: Reactor {
             guard
                 let recruitment = currentState.recruitment,
                 index < recruitment.staffings.count
-                else { return .empty() }
+            else { return .empty() }
             return .just(.setStaff(recruitment.staffings[index]))
         }
     }

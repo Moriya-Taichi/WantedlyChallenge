@@ -11,10 +11,11 @@ import UIKit
 extension UICollectionView {
     func dequeReusableCell<T: UICollectionViewCell>(_ cellType: T.Type,
                                                     indexPath: IndexPath)
-        -> T? {
+        -> T?
+    {
         return dequeueReusableCell(
             withReuseIdentifier: String(describing: cellType),
             for: indexPath
-            ) as? T
+        ) as? T
     }
 }

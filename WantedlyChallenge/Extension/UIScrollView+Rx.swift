@@ -18,7 +18,7 @@ extension Reactive where Base: UIScrollView {
                 let offsetToBottom = base.contentOffset.y + base.bounds.height
                 return offsetToBottom >= base.contentSize.height - base.bounds.height / 2
             }
-        .map { _ in () }
+            .map { _ in () }
         return source
     }
 }

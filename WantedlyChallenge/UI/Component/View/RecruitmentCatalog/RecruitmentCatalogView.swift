@@ -33,10 +33,10 @@ final class RecruitmentCatalogView: UIView {
                     RecruitmentCollectionViewCell.self,
                     indexPath: indexPath
                 )
-                else {
-                    return UICollectionViewCell()
+            else {
+                return UICollectionViewCell()
             }
-            cell.setCellContents(recruitment: recruitment)
+            cell.setCellContents(recruitmentReactor: recruitment)
             return cell
         default:
             return UICollectionViewCell()
@@ -121,10 +121,10 @@ extension RecruitmentCatalogView: StoryboardView {
             .subscribe(onNext: { [weak self] indexPath in
                 guard
                     case let .recruitmentCellItem(recruitment) = self?.reactor?.currentState.page.collection[indexPath.row]
-                    else {
-                        return
+                else {
+                    return
                 }
-                self?.selectedCellSubject.onNext(recruitment.id)
+                self?.selectedCellSubject.onNext(recruitment.identifier)
             })
             .disposed(by: disposeBag)
 

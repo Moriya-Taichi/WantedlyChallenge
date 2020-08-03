@@ -20,14 +20,15 @@ struct RecruitmentRepository: RecruitmentRepositoryType {
     let provider: MoyaProvider<WantedlyRequestType> = .init()
 
     func fetchRecruitment(input: WantedlyRequestType)
-        -> Single<[Recruitment]> {
+        -> Single<[Recruitment]>
+    {
         return provider.rx.request(input)
             .map { response -> [Recruitment] in
                 do {
                     let jsonObject = try JSONSerialization.jsonObject(
                         with: response.data,
                         options: .fragmentsAllowed
-                        ) as? [String: Any]
+                    ) as? [String: Any]
                     let recruitment = try parse([Recruitment].self, data: jsonObject?["data"])
                     return recruitment
                 } catch {

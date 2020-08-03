@@ -15,21 +15,21 @@ final class DIContainer: Assembly {
             .autoregister(
                 RecruitmentRepositoryType.self,
                 initializer: RecruitmentRepository.init
-        )
+            )
             .inObjectScope(.container)
 
         container
             .autoregister(
                 RecruitmentServiceType.self,
                 initializer: RecruitmentService.init
-        )
+            )
             .inObjectScope(.container)
 
         container
             .autoregister(
                 RecruitmentStoreType.self,
                 initializer: RecruitmentStore.init
-        )
+            )
             .inObjectScope(.container)
     }
 }

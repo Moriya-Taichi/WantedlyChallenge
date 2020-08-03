@@ -10,3 +10,5 @@ setup:
 	touch .git/hooks/post-checkout
 	cat .gitCheckoutHooks > .git/hooks/post-checkout
 	cat .gitPreCommitHooks > .git/hooks/pre-commit
+	chmod a+x .git/hooks/post-checkout
+	chmod a+x .git/hooks/pre-commit

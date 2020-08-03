@@ -50,7 +50,16 @@ final class RecruitmentCatalogViewReactor: Reactor {
             guard !currentState.isLoading else { return .empty() }
             let rectuitment = recruitmentService
                 .fetchRecruitment(page: 0)
-                .map { $0.map(CellItem.recruitmentCellItem) }
+                .compactMap { [weak self] page in
+                    guard let self = self else { return nil }
+                    return page.map { recruitment in
+                        let reactor = RecruitmentCellViewReactor(
+                            recruitment: recruitment,
+                            recruitmentService: self.recruitmentService
+                        )
+                        return CellItem.recruitmentCellItem(reactor)
+                    }
+                }
                 .map(Mutation.setRecruitments)
             return .concat([startLoading, rectuitment, endLoading])
         case let .reload(word):
@@ -73,8 +82,17 @@ final class RecruitmentCatalogViewReactor: Reactor {
                 .serchRecruitment(
                     word: word,
                     page: 0
-            )
-                .map { $0.map(CellItem.recruitmentCellItem) }
+                )
+                .compactMap { [weak self] page in
+                    guard let self = self else { return nil }
+                    return page.map { recruitment in
+                        let reactor = RecruitmentCellViewReactor(
+                            recruitment: recruitment,
+                            recruitmentService: self.recruitmentService
+                        )
+                        return CellItem.recruitmentCellItem(reactor)
+                    }
+                }
                 .map(Mutation.setRecruitments)
                 .takeUntil(self.action.filter {
                     if case .search = $0 {
@@ -88,13 +106,22 @@ final class RecruitmentCatalogViewReactor: Reactor {
             guard
                 !currentState.isLoading,
                 !currentState.page.collection.isEmpty
-                else {
-                    return .empty()
+            else {
+                return .empty()
             }
             guard let word = word, !word.isEmpty else {
                 let recruitmentPagination = recruitmentService
                     .fetchRecruitment(page: currentState.page.pageNumber)
-                    .map { $0.map(CellItem.recruitmentCellItem) }
+                    .compactMap { [weak self] page in
+                        guard let self = self else { return nil }
+                        return page.map { recruitment in
+                            let reactor = RecruitmentCellViewReactor(
+                                recruitment: recruitment,
+                                recruitmentService: self.recruitmentService
+                            )
+                            return CellItem.recruitmentCellItem(reactor)
+                        }
+                    }
                     .map { self.currentState.page.paginate($0) }
                     .map(Mutation.setRecruitments)
                 return .concat([startLoading, recruitmentPagination, endLoading])
@@ -103,8 +130,17 @@ final class RecruitmentCatalogViewReactor: Reactor {
                 .serchRecruitment(
                     word: word,
                     page: currentState.page.pageNumber
-            )
-                .map { $0.map(CellItem.recruitmentCellItem) }
+                )
+                .compactMap { [weak self] page in
+                    guard let self = self else { return nil }
+                    return page.map { recruitment in
+                        let reactor = RecruitmentCellViewReactor(
+                            recruitment: recruitment,
+                            recruitmentService: self.recruitmentService
+                        )
+                        return CellItem.recruitmentCellItem(reactor)
+                    }
+                }
                 .map { self.currentState.page.paginate($0) }
                 .map(Mutation.setRecruitments)
             return .concat([startLoading, serchPagenation, endLoading])

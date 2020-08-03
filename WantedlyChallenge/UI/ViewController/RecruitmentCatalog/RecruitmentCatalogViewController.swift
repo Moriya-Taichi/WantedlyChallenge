@@ -30,9 +30,14 @@ final class RecruitmentCatalogViewController: UIViewController {
             return
         }
         recruitmentCatalogView.reactor = reactor
-        recruitmentCatalogView.selectedCellStream
-            .subscribe(onNext: { [weak self] id in
-                self?.router?.showRecruitment(id: id)
+        recruitmentCatalogView.transitionEventStream
+            .subscribe(onNext: { [weak self] event in
+                switch event {
+                case let .showRecruitment(id):
+                    self?.router?.showRecruitment(id: id)
+                default:
+                    break
+                }
             })
             .disposed(by: dispodseBag)
         navigationItem.searchController = recruitmentCatalogView.searchController

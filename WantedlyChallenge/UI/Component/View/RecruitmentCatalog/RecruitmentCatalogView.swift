@@ -12,7 +12,7 @@ import RxOptional
 import RxSwift
 import UIKit
 
-final class RecruitmentCatalogView: UIView {
+final class RecruitmentCatalogView: UIView, TransitionalView {
     @IBOutlet private var collectionView: UICollectionView! {
         didSet {
             collectionView.register(RecruitmentCollectionViewCell.self)
@@ -43,9 +43,9 @@ final class RecruitmentCatalogView: UIView {
         }
     }
 
-    private let selectedCellSubject = PublishSubject<Int>()
-    var selectedCellStream: Observable<Int> {
-        return selectedCellSubject
+    private let transitionEventSubject = PublishSubject<TransitionEvent>()
+    var transitionEventStream: Observable<TransitionEvent> {
+        return transitionEventSubject
     }
 
     var disposeBag = DisposeBag()
@@ -124,7 +124,7 @@ extension RecruitmentCatalogView: StoryboardView {
                 else {
                     return
                 }
-                self?.selectedCellSubject.onNext(recruitment.identifier)
+                self?.transitionEventSubject.onNext(.showRecruitment(recruitment.identifier))
             })
             .disposed(by: disposeBag)
 

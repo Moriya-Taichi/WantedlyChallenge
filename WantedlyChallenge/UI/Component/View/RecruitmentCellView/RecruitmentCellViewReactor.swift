@@ -9,7 +9,9 @@
 import ReactorKit
 import RxSwift
 
-final class RecruitmentCellViewReactor: Reactor {
+final class RecruitmentCellViewReactor: HashableReactor {
+    private let recruitmentService: RecruitmentServiceType
+    let identifier: Int
     var initialState: State
 
     enum Action {
@@ -25,7 +27,9 @@ final class RecruitmentCellViewReactor: Reactor {
         let recruitment: Recruitment
     }
 
-    init(recruitment: Recruitment) {
+    init(recruitment: Recruitment, recruitmentService: RecruitmentServiceType) {
+        identifier = recruitment.id
+        self.recruitmentService = recruitmentService
         initialState = State(
             isBookmark: recruitment.canBookmark,
             recruitment: recruitment

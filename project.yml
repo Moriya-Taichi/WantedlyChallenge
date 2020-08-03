@@ -28,6 +28,13 @@ targets:
       - carthage: SDWebImageMapKit
       - carthage: DiffableDataSources
       - carthage: DifferenceKit
+    preBuildScripts:
+        - path: swiftformat.sh
+          name: swiftformat
+          shell: "/bin/sh"
+        - path: swiftlint.sh
+          name: swiftlint
+          shell: "/bin/sh"
 
   WantedlyChallengeTests:
       type: bundle.unit-test

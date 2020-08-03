@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIView {
+    // swiftlint:disable force_cast
     func loadXib() {
         let layout = Bundle
             .main

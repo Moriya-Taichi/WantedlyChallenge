@@ -83,8 +83,7 @@ final class RecruitmentView: UIView {
     private let lightFeedbackgGenerator = UIImpactFeedbackGenerator(style: .light)
     private lazy var dataSource = CollectionViewDiffableDataSource<Section, CellItem>(
         collectionView: staffCollectionView
-    )
-    { collectionView, indexPath, item -> UICollectionViewCell? in
+    ) { collectionView, indexPath, item -> UICollectionViewCell? in
         switch item {
         case let .staffCellItem(staff):
             guard
@@ -92,8 +91,8 @@ final class RecruitmentView: UIView {
                     RecruitmentStaffCollectionViewCell.self,
                     indexPath: indexPath
                 )
-            else {
-                return UICollectionViewCell()
+                else {
+                    return UICollectionViewCell()
             }
             cell.setCellContents(staff: staff)
             return cell

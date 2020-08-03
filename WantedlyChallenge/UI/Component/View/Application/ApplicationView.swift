@@ -64,8 +64,8 @@ extension ApplicationView: StoryboardView {
                 guard
                     let self = self,
                     let cell = self.choicesTableView.cellForRow(at: indexPath)
-                else {
-                    return
+                    else {
+                        return
                 }
                 cell.accessoryType = .checkmark
             })
@@ -78,8 +78,8 @@ extension ApplicationView: StoryboardView {
                 guard
                     let self = self,
                     let cell = self.choicesTableView.cellForRow(at: indexPath)
-                else {
-                    return
+                    else {
+                        return
                 }
                 cell.accessoryType = .none
             })
@@ -120,7 +120,7 @@ extension ApplicationView: StoryboardView {
                 cell.textLabel?.text = item
                 cell.selectionStyle = .none
             }
-            .disposed(by: disposeBag)
+        .disposed(by: disposeBag)
 
         reactor.state.map { $0.isSelected }
             .distinctUntilChanged()

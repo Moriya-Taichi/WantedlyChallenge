@@ -26,8 +26,8 @@ final class RecruitmentCatalogViewController: UIViewController {
         guard
             let recruitmentCatalogView = recruitmentCatalogView,
             let reactor = reactor
-        else {
-            return
+            else {
+                return
         }
         recruitmentCatalogView.reactor = reactor
         recruitmentCatalogView.selectedCellStream

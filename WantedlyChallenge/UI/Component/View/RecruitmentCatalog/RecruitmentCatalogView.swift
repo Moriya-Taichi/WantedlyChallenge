@@ -25,8 +25,7 @@ final class RecruitmentCatalogView: UIView {
 
     private lazy var dataSource = CollectionViewDiffableDataSource<Section, CellItem>(
         collectionView: collectionView
-    )
-    { collectionView, indexPath, item -> UICollectionViewCell? in
+    ) { collectionView, indexPath, item -> UICollectionViewCell? in
         switch item {
         case let .recruitmentCellItem(recruitment):
             guard
@@ -34,8 +33,8 @@ final class RecruitmentCatalogView: UIView {
                     RecruitmentCollectionViewCell.self,
                     indexPath: indexPath
                 )
-            else {
-                return UICollectionViewCell()
+                else {
+                    return UICollectionViewCell()
             }
             cell.setCellContents(recruitment: recruitment)
             return cell
@@ -122,8 +121,8 @@ extension RecruitmentCatalogView: StoryboardView {
             .subscribe(onNext: { [weak self] indexPath in
                 guard
                     case let .recruitmentCellItem(recruitment) = self?.reactor?.currentState.page.collection[indexPath.row]
-                else {
-                    return
+                    else {
+                        return
                 }
                 self?.selectedCellSubject.onNext(recruitment.id)
             })

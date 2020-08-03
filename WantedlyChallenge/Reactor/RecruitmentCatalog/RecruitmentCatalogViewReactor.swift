@@ -73,7 +73,7 @@ final class RecruitmentCatalogViewReactor: Reactor {
                 .serchRecruitment(
                     word: word,
                     page: 0
-                )
+            )
                 .map { $0.map(CellItem.recruitmentCellItem) }
                 .map(Mutation.setRecruitments)
                 .takeUntil(self.action.filter {
@@ -88,8 +88,8 @@ final class RecruitmentCatalogViewReactor: Reactor {
             guard
                 !currentState.isLoading,
                 !currentState.page.collection.isEmpty
-            else {
-                return .empty()
+                else {
+                    return .empty()
             }
             guard let word = word, !word.isEmpty else {
                 let recruitmentPagination = recruitmentService
@@ -103,7 +103,7 @@ final class RecruitmentCatalogViewReactor: Reactor {
                 .serchRecruitment(
                     word: word,
                     page: currentState.page.pageNumber
-                )
+            )
                 .map { $0.map(CellItem.recruitmentCellItem) }
                 .map { self.currentState.page.paginate($0) }
                 .map(Mutation.setRecruitments)

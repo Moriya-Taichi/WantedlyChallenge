@@ -6,8 +6,8 @@
 //  Copyright © 2020 Mori. All rights reserved.
 //
 
-import SwinjectAutoregistration
 import Swinject
+import SwinjectAutoregistration
 
 final class DIContainer: Assembly {
     func assemble(container: Container) {
@@ -15,21 +15,21 @@ final class DIContainer: Assembly {
             .autoregister(
                 RecruitmentRepositoryType.self,
                 initializer: RecruitmentRepository.init
-            )
+        )
             .inObjectScope(.container)
 
         container
             .autoregister(
                 RecruitmentServiceType.self,
                 initializer: RecruitmentService.init
-            )
+        )
             .inObjectScope(.container)
 
         container
             .autoregister(
                 RecruitmentStoreType.self,
                 initializer: RecruitmentStore.init
-            )
+        )
             .inObjectScope(.container)
     }
 }

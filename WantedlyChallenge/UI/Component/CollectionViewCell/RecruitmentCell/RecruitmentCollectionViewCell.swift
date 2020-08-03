@@ -16,7 +16,7 @@ final class RecruitmentCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 5
     }
 
-    func setCellContents(recruitment: Recruitment) {
-        recrutingCellView.reactor = RecruitmentCellViewReactor(recruitment: recruitment)
+    func setCellContents(recruitmentReactor: RecruitmentCellViewReactor) {
+        recrutingCellView.reactor = recruitmentReactor
     }
 }

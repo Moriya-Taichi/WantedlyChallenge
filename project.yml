@@ -2,6 +2,9 @@ name: WantedlyChallenge
 options:
   bundleIdPrefix: mori
 
+settings:
+  API_URL: https://www.wantedly.com/api/v1/projects
+
 targets:
   WantedlyChallenge:
     type: application
